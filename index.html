@@ -1,857 +1,1542 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Klanstart - Empresa de desarrollo web, apps móviles y videojuegos">
-    <meta name="keywords" content="desarrollo web, apps móviles, videojuegos, desarrollo software">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Klanstart - Empresa de desarrollo web, apps móviles y videojuegos"
+    />
+    <meta
+      name="keywords"
+      content="desarrollo web, apps móviles, videojuegos, desarrollo software"
+    />
     <title>KLANSTART - Desarrollo de Software Innovador</title>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- AOS - Animate On Scroll -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <style>
-        body { font-family: 'Inter', sans-serif; background: #0E0E11; }
-        .font-poppins { font-family: 'Poppins', sans-serif; }
-        
-        /* Custom animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 8px #18F2B2; }
-            50% { box-shadow: 0 0 12px #18F2B2; }
-        }
-        @keyframes neonPulse {
-            0%, 100% { text-shadow: 0 0 5px #4B5CC4, 0 0 10px #4B5CC4; }
-            50% { text-shadow: 0 0 8px #4B5CC4, 0 0 15px #4B5CC4; }
-        }
-        .float-animation { animation: float 6s ease-in-out infinite; }
-        .glow-animation { animation: glow 3s ease-in-out infinite; }
-        .neon-text { animation: neonPulse 2s ease-in-out infinite; }
-        
-        /* NeonDusk gradient backgrounds */
-        .gradient-bg { background: linear-gradient(135deg, #4B5CC4 0%, #18F2B2 50%, #4B5CC4 100%); }
-        .gradient-dusk { background: linear-gradient(135deg, #4B5CC4 0%, #18F2B2 25%, #FF6B5E 50%, #4B5CC4 75%, #18F2B2 100%); }
-        .gradient-text { background: linear-gradient(135deg, #4B5CC4 0%, #18F2B2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .gradient-text-dusk { background: linear-gradient(135deg, #4B5CC4 0%, #18F2B2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        /* Subtle borders and effects */
-        .neon-border { border: 1px solid #18F2B2; box-shadow: 0 0 8px rgba(24, 242, 178, 0.3); }
-        .neon-border-primary { border: 1px solid #4B5CC4; box-shadow: 0 0 8px rgba(75, 92, 196, 0.3); }
-        .neon-glow { box-shadow: 0 0 15px rgba(24, 242, 178, 0.2), inset 0 0 15px rgba(24, 242, 178, 0.05); }
-        
-        /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 12px; }
-        ::-webkit-scrollbar-track { background: #1A1B22; }
-        ::-webkit-scrollbar-thumb { background: linear-gradient(45deg, #4B5CC4, #18F2B2); border-radius: 6px; }
-        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(45deg, #FF6B5E, #18F2B2); }
-        
-        /* NeonDusk cards */
-        .gaming-card {
-            background: linear-gradient(145deg, #1A1B22 0%, #2C2D36 100%);
-            border: 1px solid #2C2D36;
-            transition: all 0.3s ease;
-        }
-        .gaming-card:hover {
-            transform: translateY(-5px) scale(1.01);
-            box-shadow: 0 10px 25px rgba(75, 92, 196, 0.2), 0 0 0 1px #4B5CC4;
-        }
-        
-        /* Pricing cards adjustments */
-        @media (max-width: 768px) {
-            .pricing-card-popular {
-                margin-top: 2rem !important;
-                margin-bottom: 2rem !important;
-            }
-        }
-    </style>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#4B5CC4',
-                        secondary: '#18F2B2',
-                        accent: '#FF6B5E',
-                        dusk: {
-                            bg: '#0E0E11',
-                            surface: '#1A1B22',
-                            border: '#2C2D36',
-                            textPrimary: '#ECECF1',
-                            textSecondary: '#A7A9BD',
-                            accentPrimary: '#4B5CC4',
-                            accentSuccess: '#18F2B2',
-                            accentAlert: '#FF6B5E'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-<body class="bg-dusk-bg text-dusk-textPrimary">
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background: #0e0e11;
+      }
+      .font-poppins {
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Custom animations */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+      @keyframes glow {
+        0%,
+        100% {
+          filter: drop-shadow(0 0 8px #18f2b2);
+        }
+        50% {
+          filter: drop-shadow(0 0 12px #18f2b2);
+        }
+      }
+      @keyframes neonPulse {
+        0%,
+        100% {
+          text-shadow: 0 0 5px #4b5cc4, 0 0 10px #4b5cc4;
+        }
+        50% {
+          text-shadow: 0 0 8px #4b5cc4, 0 0 15px #4b5cc4;
+        }
+      }
+      .float-animation {
+        animation: float 6s ease-in-out infinite;
+      }
+      .glow-animation {
+        animation: glow 3s ease-in-out infinite;
+      }
+      .neon-text {
+        animation: neonPulse 2s ease-in-out infinite;
+      }
+
+      /* NeonDusk gradient backgrounds */
+      .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          #4b5cc4 0%,
+          #18f2b2 50%,
+          #4b5cc4 100%
+        );
+      }
+      .gradient-dusk {
+        background: linear-gradient(
+          135deg,
+          #4b5cc4 0%,
+          #18f2b2 25%,
+          #ff6b5e 50%,
+          #4b5cc4 75%,
+          #18f2b2 100%
+        );
+      }
+      .gradient-text {
+        background: linear-gradient(135deg, #4b5cc4 0%, #18f2b2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .gradient-text-dusk {
+        background: linear-gradient(135deg, #4b5cc4 0%, #18f2b2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Subtle borders and effects */
+      .neon-border {
+        border: 1px solid #18f2b2;
+        box-shadow: 0 0 8px rgba(24, 242, 178, 0.3);
+      }
+      .neon-border-primary {
+        border: 1px solid #4b5cc4;
+        box-shadow: 0 0 8px rgba(75, 92, 196, 0.3);
+      }
+      .neon-glow {
+        box-shadow: 0 0 15px rgba(24, 242, 178, 0.2),
+          inset 0 0 15px rgba(24, 242, 178, 0.05);
+      }
+
+      /* Drop shadows for images and icons */
+      .icon-glow {
+        filter: drop-shadow(0 0 8px rgba(24, 242, 178, 0.4));
+      }
+      .icon-glow-primary {
+        filter: drop-shadow(0 0 8px rgba(75, 92, 196, 0.4));
+      }
+      .icon-glow-accent {
+        filter: drop-shadow(0 0 8px rgba(255, 107, 94, 0.4));
+      }
+      .icon-glow-cyan {
+        filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.4));
+      }
+      .icon-glow-magenta {
+        filter: drop-shadow(0 0 8px rgba(255, 0, 255, 0.4));
+      }
+      .icon-glow-pink {
+        filter: drop-shadow(0 0 8px rgba(255, 20, 147, 0.4));
+      }
+      .icon-glow-green {
+        filter: drop-shadow(0 0 8px rgba(0, 255, 127, 0.4));
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1b22;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(45deg, #4b5cc4, #18f2b2);
+        border-radius: 6px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(45deg, #ff6b5e, #18f2b2);
+      }
+
+      /* NeonDusk cards */
+      .gaming-card {
+        background: linear-gradient(145deg, #1a1b22 0%, #2c2d36 100%);
+        border: 1px solid #2c2d36;
+        transition: all 0.3s ease;
+      }
+      .gaming-card:hover {
+        transform: translateY(-5px) scale(1.01);
+        box-shadow: 0 10px 25px rgba(75, 92, 196, 0.2), 0 0 0 1px #4b5cc4;
+      }
+
+      /* Pricing cards adjustments */
+      @media (max-width: 768px) {
+        .pricing-card-popular {
+          margin-top: 2rem !important;
+          margin-bottom: 2rem !important;
+        }
+      }
+
+      /* Modern navbar styles */
+      .navbar-modern {
+        background: linear-gradient(
+          90deg,
+          rgba(26, 27, 34, 0.95) 0%,
+          rgba(44, 45, 54, 0.95) 50%,
+          rgba(26, 27, 34, 0.95) 100%
+        );
+        border-bottom: 1px solid rgba(75, 92, 196, 0.2);
+        box-shadow: 0 4px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      .navbar-scrolled {
+        background: rgba(14, 14, 17, 0.98) !important;
+        border-bottom: 1px solid rgba(24, 242, 178, 0.3);
+        box-shadow: 0 8px 32px rgba(75, 92, 196, 0.15);
+      }
+
+      /* Modern nav links */
+      .nav-link {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #4b5cc4, #18f2b2);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::before {
+        width: 100%;
+      }
+
+      /* Gaming specific gradients and borders */
+      .neon-border-pink {
+        border: 1px solid #ff1493;
+        box-shadow: 0 0 8px rgba(255, 20, 147, 0.3);
+      }
+      .gradient-text-gamer {
+        background: linear-gradient(
+          135deg,
+          #ff00ff 0%,
+          #00ffff 50%,
+          #00ff7f 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .gradient-gamer {
+        background: linear-gradient(
+          135deg,
+          #1a1b22 0%,
+          #ff00ff 25%,
+          #00ffff 50%,
+          #00ff7f 75%,
+          #1a1b22 100%
+        );
+      }
+    </style>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4B5CC4",
+              secondary: "#18F2B2",
+              accent: "#FF6B5E",
+              dusk: {
+                bg: "#0E0E11",
+                surface: "#1A1B22",
+                border: "#2C2D36",
+                textPrimary: "#ECECF1",
+                textSecondary: "#A7A9BD",
+                accentPrimary: "#4B5CC4",
+                accentSuccess: "#18F2B2",
+                accentAlert: "#FF6B5E",
+              },
+              gamer: {
+                cyan: "#00FFFF",
+                magenta: "#FF00FF",
+                pink: "#FF1493",
+                green: "#00FF7F",
+                teal: "#40E0D0",
+                purple: "#9A4DFF",
+                orange: "#FF8C00",
+                yellow: "#FFD700",
+              },
+            },
+            boxShadow: {
+              "gamer-cyan": "0 0 15px rgba(0, 255, 255, 0.5)",
+              "gamer-green": "0 0 15px rgba(0, 255, 127, 0.5)",
+              "gamer-magenta": "0 0 15px rgba(255, 0, 255, 0.5)",
+              "gamer-pink": "0 0 15px rgba(255, 20, 147, 0.5)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-dusk-bg text-dusk-textPrimary">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-dusk-surface/95 backdrop-blur-md z-50 shadow-2xl neon-border transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <img src="img/icons/lugo.png" alt="Klanstart" class="h-10 w-auto glow-animation">
-                    <span class="ml-3 text-2xl font-bold font-poppins gradient-text-dusk neon-text">KLANSTART</span>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium">Home</a>
-                    <a href="#service" class="text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium">Servicios</a>
-                    <a href="#portfolio" class="text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium">Portfolio</a>
-                    <a href="#about" class="text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium">Acerca de nosotros</a>
-                    <a href="#pricing" class="text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium">Precios</a>
-                    <a href="#contact" class="text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium">Contacto</a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button class="text-dusk-textPrimary" onclick="toggleMobileMenu()">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
+    <nav
+      class="fixed top-0 w-full backdrop-blur-lg z-50 navbar-modern transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center">
+            <img
+              src="img/icons/lugo.png"
+              alt="Klanstart"
+              class="h-10 w-auto glow-animation icon-glow"
+            />
+            <span
+              class="ml-3 text-2xl font-bold font-poppins gradient-text-dusk neon-text"
+              >KLANSTART</span
+            >
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Home</a
+            >
+            <a
+              href="#service"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Servicios</a
+            >
+            <a
+              href="#vision"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Vision</a
+            >
+            <a
+              href="#about"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Acerca de nosotros</a
+            >
+            <a
+              href="#pricing"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Precios</a
+            >
+            <a
+              href="#contact"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Contacto</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button class="text-dusk-textPrimary" onclick="toggleMobileMenu()">
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-dusk-surface/95 border-t border-dusk-accentSuccess">
-            <div class="px-4 py-2 space-y-1">
-                <a href="#home" class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors">Home</a>
-                <a href="#service" class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors">Servicios</a>
-                <a href="#portfolio" class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors">Portfolio</a>
-                <a href="#about" class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors">Acerca de nosotros</a>
-                <a href="#pricing" class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors">Precios</a>
-                <a href="#contact" class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors">Contacto</a>
-            </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-dusk-surface/95 border-t border-dusk-accentSuccess"
+      >
+        <div class="px-4 py-2 space-y-1">
+          <a
+            href="#home"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Home</a
+          >
+          <a
+            href="#service"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Servicios</a
+          >
+          <a
+            href="#vision"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Vision</a
+          >
+          <a
+            href="#about"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Acerca de nosotros</a
+          >
+          <a
+            href="#pricing"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Precios</a
+          >
+          <a
+            href="#contact"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Contacto</a
+          >
         </div>
+      </div>
     </nav>
 
     <!-- Hero Carousel Section -->
     <section id="home" class="min-h-screen relative overflow-hidden">
-        <div class="carousel-container relative h-screen">
-            <!-- Slide 1: Videojuegos -->
-            <div class="carousel-slide active absolute inset-0 transition-opacity duration-1000" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/slider/logo5.png') center/cover;">
-                <div class="flex items-center justify-center h-full">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white" data-aos="fade-up">
-                        <img src="img/icons/titulo3.png" alt="Gaming" class="mx-auto mb-8 h-20 w-auto glow-animation">
-                        <h1 class="text-4xl lg:text-6xl font-bold font-poppins mb-6 neon-text gradient-text-gamer">
-                            DESARROLLO DE VIDEOJUEGOS
-                        </h1>
-                        <p class="text-xl lg:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
-                            Defendemos la idea de que no todo está inventado, por eso innovamos con el desarrollo de videojuegos también como herramientas para empresas.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="#service" class="bg-gradient-to-r from-dusk-accentPrimary to-dusk-accentSuccess text-white px-8 py-4 rounded-full font-semibold neon-glow hover:scale-105 transition-all duration-300">
-                                Ver Servicios
-                            </a>
-                            <a href="#contact" class="neon-border-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-dusk-accentPrimary transition-all duration-300">
-                                Contáctanos
-                            </a>
-                        </div>
-                    </div>
-                </div>
+      <div class="carousel-container relative h-screen">
+        <!-- Slide 1: Videojuegos -->
+        <div
+          class="carousel-slide active absolute inset-0 transition-opacity duration-1000"
+          style="
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('img/slider/logo5.png') center/cover;
+          "
+        >
+          <div class="flex items-center justify-center h-full">
+            <div
+              class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
+              data-aos="fade-up"
+            >
+              <img
+                src="img/icons/titulo3.png"
+                alt="Gaming"
+                class="mx-auto mb-8 h-20 w-auto glow-animation icon-glow-magenta"
+              />
+              <h1
+                class="text-4xl lg:text-6xl font-bold font-poppins mb-6 neon-text gradient-text-gamer"
+              >
+                DESARROLLO DE VIDEOJUEGOS
+              </h1>
+              <p class="text-xl lg:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
+                Defendemos la idea de que no todo está inventado, por eso
+                innovamos con el desarrollo de videojuegos también como
+                herramientas para empresas.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="#service"
+                  class="bg-gradient-to-r from-dusk-accentPrimary to-dusk-accentSuccess text-white px-8 py-4 rounded-full font-semibold neon-glow hover:scale-105 transition-all duration-300"
+                >
+                  Ver Servicios
+                </a>
+                <a
+                  href="#contact"
+                  class="neon-border-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-dusk-accentPrimary transition-all duration-300"
+                >
+                  Contáctanos
+                </a>
+              </div>
             </div>
-
-            <!-- Slide 2: Apps Móviles -->
-            <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/slider/mobile.png') center/cover;">
-                <div class="flex items-center justify-center h-full">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white" data-aos="fade-up">
-                        <img src="img/icons/titulo2.png" alt="Mobile" class="mx-auto mb-8 h-20 w-auto glow-animation">
-                        <h1 class="text-4xl lg:text-6xl font-bold font-poppins mb-6 neon-text gradient-text-gamer">
-                            APLICACIONES PARA DISPOSITIVOS MÓVILES
-                        </h1>
-                        <p class="text-xl lg:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
-                            Entendemos las necesidades del mundo actual y el celular es una herramienta esencial para todas las personas en casi todos los aspectos de su vida.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="#service" class="bg-gradient-to-r from-dusk-accentSuccess to-dusk-accentAlert text-black px-8 py-4 rounded-full font-semibold neon-glow hover:scale-105 transition-all duration-300">
-                                Ver Servicios
-                            </a>
-                            <a href="#contact" class="neon-border text-white px-8 py-4 rounded-full font-semibold hover:bg-dusk-accentSuccess transition-all duration-300">
-                                Contáctanos
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 3: Web Responsive -->
-            <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/slider/fondo4.jpeg') center/cover;">
-                <div class="flex items-center justify-center h-full">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white" data-aos="fade-up">
-                        <img src="img/icons/titulo3c.png" alt="Web" class="mx-auto mb-8 h-20 w-auto glow-animation">
-                        <h1 class="text-4xl lg:text-6xl font-bold font-poppins mb-6 neon-text gradient-text-gamer">
-                            WEB RESPONSIVE
-                        </h1>
-                        <p class="text-xl lg:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
-                            Nuestro objetivo principal es satisfacer la necesidad del usuario valorando al cliente como un integrante de nuestra familia Klanstart.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="#service" class="bg-gradient-to-r from-dusk-accentAlert to-dusk-accentPrimary text-white px-8 py-4 rounded-full font-semibold neon-glow hover:scale-105 transition-all duration-300">
-                                Ver Servicios
-                            </a>
-                            <a href="#contact" class="neon-border text-white px-8 py-4 rounded-full font-semibold hover:bg-dusk-accentAlert transition-all duration-300">
-                                Contáctanos
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Carousel Navigation -->
-            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
-                <button class="carousel-indicator active w-4 h-4 bg-dusk-accentPrimary rounded-full" onclick="changeSlide(0)"></button>
-                <button class="carousel-indicator w-4 h-4 bg-white/50 rounded-full" onclick="changeSlide(1)"></button>
-                <button class="carousel-indicator w-4 h-4 bg-white/50 rounded-full" onclick="changeSlide(2)"></button>
-            </div>
-
-            <!-- Carousel Arrows -->
-            <button class="absolute left-8 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:text-dusk-accentSuccess transition-colors" onclick="previousSlide()">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="absolute right-8 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:text-dusk-accentSuccess transition-colors" onclick="nextSlide()">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+          </div>
         </div>
+
+        <!-- Slide 2: Apps Móviles -->
+        <div
+          class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+          style="
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('img/slider/mobile.png') center/cover;
+          "
+        >
+          <div class="flex items-center justify-center h-full">
+            <div
+              class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
+              data-aos="fade-up"
+            >
+              <img
+                src="img/icons/titulo2.png"
+                alt="Mobile"
+                class="mx-auto mb-8 h-20 w-auto glow-animation icon-glow-cyan"
+              />
+              <h1
+                class="text-4xl lg:text-6xl font-bold font-poppins mb-6 neon-text gradient-text-gamer"
+              >
+                APLICACIONES PARA DISPOSITIVOS MÓVILES
+              </h1>
+              <p class="text-xl lg:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
+                Entendemos las necesidades del mundo actual y el celular es una
+                herramienta esencial para todas las personas en casi todos los
+                aspectos de su vida.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="#service"
+                  class="bg-gradient-to-r from-dusk-accentSuccess to-dusk-accentAlert text-black px-8 py-4 rounded-full font-semibold neon-glow hover:scale-105 transition-all duration-300"
+                >
+                  Ver Servicios
+                </a>
+                <a
+                  href="#contact"
+                  class="neon-border text-white px-8 py-4 rounded-full font-semibold hover:bg-dusk-accentSuccess transition-all duration-300"
+                >
+                  Contáctanos
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Web Responsive -->
+        <div
+          class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+          style="
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('img/slider/fondo4.jpeg') center/cover;
+          "
+        >
+          <div class="flex items-center justify-center h-full">
+            <div
+              class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
+              data-aos="fade-up"
+            >
+              <img
+                src="img/icons/titulo3c.png"
+                alt="Web"
+                class="mx-auto mb-8 h-20 w-auto glow-animation icon-glow-green"
+              />
+              <h1
+                class="text-4xl lg:text-6xl font-bold font-poppins mb-6 neon-text gradient-text-gamer"
+              >
+                WEB RESPONSIVE
+              </h1>
+              <p class="text-xl lg:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
+                Nuestro objetivo principal es satisfacer la necesidad del
+                usuario valorando al cliente como un integrante de nuestra
+                familia Klanstart.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="#service"
+                  class="bg-gradient-to-r from-dusk-accentAlert to-dusk-accentPrimary text-white px-8 py-4 rounded-full font-semibold neon-glow hover:scale-105 transition-all duration-300"
+                >
+                  Ver Servicios
+                </a>
+                <a
+                  href="#contact"
+                  class="neon-border text-white px-8 py-4 rounded-full font-semibold hover:bg-dusk-accentAlert transition-all duration-300"
+                >
+                  Contáctanos
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Navigation -->
+        <div
+          class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4"
+        >
+          <button
+            class="carousel-indicator active w-4 h-4 bg-dusk-accentPrimary rounded-full"
+            onclick="changeSlide(0)"
+          ></button>
+          <button
+            class="carousel-indicator w-4 h-4 bg-white/50 rounded-full"
+            onclick="changeSlide(1)"
+          ></button>
+          <button
+            class="carousel-indicator w-4 h-4 bg-white/50 rounded-full"
+            onclick="changeSlide(2)"
+          ></button>
+        </div>
+
+        <!-- Carousel Arrows -->
+        <button
+          class="absolute left-8 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:text-dusk-accentSuccess transition-colors"
+          onclick="previousSlide()"
+        >
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button
+          class="absolute right-8 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:text-dusk-accentSuccess transition-colors"
+          onclick="nextSlide()"
+        >
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
     </section>
 
     <!-- Services Section -->
     <section id="service" class="py-20 bg-dusk-surface">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl lg:text-5xl font-bold font-poppins mb-6 gradient-text-dusk neon-text">
-                    Servicios
-                </h2>
-                <p class="text-xl text-dusk-textSecondary max-w-4xl mx-auto">
-                    Principalmente ofrecemos desarrollo de Páginas web, tanto estáticas como dinámicas. También desarrollamos apps web, móviles y videojuegos.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-12">
-                <!-- Left Column -->
-                <div class="space-y-8">
-                    <!-- Web Development -->
-                    <div class="gaming-card rounded-3xl p-8 neon-glow" data-aos="fade-right">
-                        <div class="flex items-start space-x-6">
-                            <div class="flex-shrink-0">
-                                <img src="img/icons/web.png" alt="Web Development" class="w-16 h-16 glow-animation">
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold font-poppins mb-4 text-dusk-accentSuccess">Páginas Web</h3>
-                                <ul class="space-y-2 text-dusk-textSecondary">
-                                    <li class="flex items-center"><i class="fas fa-check text-dusk-accentSuccess mr-3"></i> Landing pages</li>
-                                    <li class="flex items-center"><i class="fas fa-check text-dusk-accentSuccess mr-3"></i> Páginas web estáticas</li>
-                                    <li class="flex items-center"><i class="fas fa-check text-dusk-accentSuccess mr-3"></i> Páginas web dinámicas funcionales</li>
-                                    <li class="flex items-center"><i class="fas fa-check text-dusk-accentSuccess mr-3"></i> Portfolios profesionales</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Mobile Apps -->
-                    <div class="gaming-card rounded-3xl p-8 neon-glow" data-aos="fade-right" data-aos-delay="200">
-                        <div class="flex items-start space-x-6">
-                            <div class="flex-shrink-0">
-                                <img src="img/icons/app1.png" alt="Mobile Apps" class="w-16 h-16 glow-animation">
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold font-poppins mb-4 text-dusk-accentPrimary">Apps móviles</h3>
-                                <ul class="space-y-2 text-dusk-textSecondary">
-                                    <li class="flex items-center"><i class="fas fa-check text-dusk-accentSuccess mr-3"></i> Aplicaciones personalizadas para celulares</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Right Column -->
-                <div class="space-y-8">
-                    <!-- Web Apps -->
-                    <div class="gaming-card rounded-3xl p-8 neon-glow" data-aos="fade-left">
-                        <div class="flex items-start space-x-6">
-                            <div class="flex-shrink-0">
-                                <img src="img/icons/app2.png" alt="Web Apps" class="w-16 h-16 glow-animation">
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold font-poppins mb-4 text-gamer-teal">Apps web</h3>
-                                <ul class="space-y-2 text-gray-300">
-                                    <li class="flex items-center"><i class="fas fa-check text-gamer-green mr-3"></i> Aplicaciones web para negocios</li>
-                                    <li class="flex items-center"><i class="fas fa-check text-gamer-green mr-3"></i> E-commerce personalizados</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Games -->
-                    <div class="gaming-card rounded-3xl p-8 neon-glow" data-aos="fade-left" data-aos-delay="200">
-                        <div class="flex items-start space-x-6">
-                            <div class="flex-shrink-0">
-                                <img src="img/icons/game.png" alt="Games" class="w-16 h-16 glow-animation">
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold font-poppins mb-4 text-gamer-pink">Videojuegos</h3>
-                                <ul class="space-y-2 text-gray-300">
-                                    <li class="flex items-center"><i class="fas fa-check text-gamer-green mr-3"></i> Videojuegos para empresas</li>
-                                    <li class="flex items-center"><i class="fas fa-check text-gamer-green mr-3"></i> Proyectos propios</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-4xl lg:text-5xl font-bold font-poppins mb-6 gradient-text-dusk neon-text"
+          >
+            Servicios
+          </h2>
+          <p class="text-xl text-dusk-textSecondary max-w-4xl mx-auto">
+            Principalmente ofrecemos desarrollo de Páginas web, tanto estáticas
+            como dinámicas. También desarrollamos apps web, móviles y
+            videojuegos.
+          </p>
         </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-12">
+          <!-- Left Column -->
+          <div class="space-y-8">
+            <!-- Web Development -->
+            <div
+              class="gaming-card rounded-3xl p-8 neon-glow"
+              data-aos="fade-right"
+            >
+              <div class="flex items-start space-x-6">
+                <div class="flex-shrink-0">
+                  <img
+                    src="img/icons/web.png"
+                    alt="Web Development"
+                    class="w-16 h-16 glow-animation icon-glow"
+                  />
+                </div>
+                <div>
+                  <h3
+                    class="text-2xl font-bold font-poppins mb-4 text-dusk-accentSuccess"
+                  >
+                    Páginas Web
+                  </h3>
+                  <ul class="space-y-2 text-dusk-textSecondary">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-dusk-accentSuccess mr-3"></i>
+                      Landing pages
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-dusk-accentSuccess mr-3"></i>
+                      Páginas web estáticas
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-dusk-accentSuccess mr-3"></i>
+                      Páginas web dinámicas funcionales
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-dusk-accentSuccess mr-3"></i>
+                      Portfolios profesionales
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobile Apps -->
+            <div
+              class="gaming-card rounded-3xl p-8 neon-glow"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
+              <div class="flex items-start space-x-6">
+                <div class="flex-shrink-0">
+                  <img
+                    src="img/icons/app1.png"
+                    alt="Mobile Apps"
+                    class="w-16 h-16 glow-animation icon-glow-primary"
+                  />
+                </div>
+                <div>
+                  <h3
+                    class="text-2xl font-bold font-poppins mb-4 text-dusk-accentPrimary"
+                  >
+                    Apps móviles
+                  </h3>
+                  <ul class="space-y-2 text-dusk-textSecondary">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-dusk-accentSuccess mr-3"></i>
+                      Aplicaciones personalizadas para celulares
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="space-y-8">
+            <!-- Web Apps -->
+            <div
+              class="gaming-card rounded-3xl p-8 neon-glow"
+              data-aos="fade-left"
+            >
+              <div class="flex items-start space-x-6">
+                <div class="flex-shrink-0">
+                  <img
+                    src="img/icons/app2.png"
+                    alt="Web Apps"
+                    class="w-16 h-16 glow-animation icon-glow-cyan"
+                  />
+                </div>
+                <div>
+                  <h3
+                    class="text-2xl font-bold font-poppins mb-4 text-gamer-teal"
+                  >
+                    Apps web
+                  </h3>
+                  <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-gamer-green mr-3"></i>
+                      Aplicaciones web para negocios
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-gamer-green mr-3"></i>
+                      E-commerce personalizados
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Games -->
+            <div
+              class="gaming-card rounded-3xl p-8 neon-glow"
+              data-aos="fade-left"
+              data-aos-delay="200"
+            >
+              <div class="flex items-start space-x-6">
+                <div class="flex-shrink-0">
+                  <img
+                    src="img/icons/game.png"
+                    alt="Games"
+                    class="w-16 h-16 glow-animation icon-glow-pink"
+                  />
+                </div>
+                <div>
+                  <h3
+                    class="text-2xl font-bold font-poppins mb-4 text-gamer-pink"
+                  >
+                    Videojuegos
+                  </h3>
+                  <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-gamer-green mr-3"></i>
+                      Videojuegos para empresas
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-gamer-green mr-3"></i>
+                      Proyectos propios
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Vision Section -->
-    <section id="portfolio" class="py-20 gradient-gamer">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center text-white" data-aos="fade-up">
-                <h2 class="text-4xl lg:text-5xl font-bold font-poppins mb-6 neon-text">
-                    VISION
-                </h2>
-                <p class="text-xl max-w-4xl mx-auto opacity-90 leading-relaxed">
-                    Nuestro compromiso y el sentido de lealtad hacia nuestros clientes es el motor que nos mantiene enfocados y entusiasmados a seguir dando lo mejor.
-                </p>
-            </div>
-            
-            <!-- Project Filters -->
-            <div class="mt-16" data-aos="fade-up" data-aos-delay="200">
-                <div class="flex flex-wrap justify-center gap-4 mb-12">
-                    <button class="gaming-card neon-border text-white px-6 py-3 rounded-full hover:bg-gamer-magenta hover:scale-105 transition-all duration-300 font-medium filter-btn active" data-filter="all">
-                        Todos
-                    </button>
-                    <button class="bg-gray-800/50 backdrop-blur-md text-white px-6 py-3 rounded-full hover:bg-gamer-cyan hover:text-black hover:scale-105 transition-all duration-300 font-medium filter-btn" data-filter="web">
-                        Web
-                    </button>
-                    <button class="bg-gray-800/50 backdrop-blur-md text-white px-6 py-3 rounded-full hover:bg-gamer-green hover:text-black hover:scale-105 transition-all duration-300 font-medium filter-btn" data-filter="app">
-                        App
-                    </button>
-                    <button class="bg-gray-800/50 backdrop-blur-md text-white px-6 py-3 rounded-full hover:bg-gamer-teal hover:text-black hover:scale-105 transition-all duration-300 font-medium filter-btn" data-filter="ecommerce">
-                        E-commers
-                    </button>
-                    <button class="bg-gray-800/50 backdrop-blur-md text-white px-6 py-3 rounded-full hover:bg-gamer-pink hover:text-black hover:scale-105 transition-all duration-300 font-medium filter-btn" data-filter="games">
-                        Games
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Gaming Elements -->
-            <div class="grid md:grid-cols-3 gap-8 mt-16">
-                <div class="gaming-card rounded-2xl p-6 text-center neon-glow" data-aos="fade-up">
-                    <i class="fas fa-gamepad text-6xl text-gamer-magenta mb-4 glow-animation"></i>
-                    <h3 class="text-xl font-bold text-white mb-2">Level Up</h3>
-                    <p class="text-gray-300">Siempre mejorando nuestras habilidades</p>
-                </div>
-                <div class="gaming-card rounded-2xl p-6 text-center neon-glow" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-trophy text-6xl text-gamer-cyan mb-4 glow-animation"></i>
-                    <h3 class="text-xl font-bold text-white mb-2">Achievement</h3>
-                    <p class="text-gray-300">Objetivos alcanzados con éxito</p>
-                </div>
-                <div class="gaming-card rounded-2xl p-6 text-center neon-glow" data-aos="fade-up" data-aos-delay="400">
-                    <i class="fas fa-rocket text-6xl text-gamer-green mb-4 glow-animation"></i>
-                    <h3 class="text-xl font-bold text-white mb-2">Power Up</h3>
-                    <p class="text-gray-300">Potenciamos tu presencia digital</p>
-                </div>
-            </div>
+    <section id="vision" class="py-20 gradient-gamer">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center text-white" data-aos="fade-up">
+          <h2
+            class="text-4xl lg:text-5xl font-bold font-poppins mb-6 neon-text"
+          >
+            VISION
+          </h2>
+          <p class="text-xl max-w-4xl mx-auto opacity-90 leading-relaxed">
+            Nuestro compromiso y el sentido de lealtad hacia nuestros clientes
+            es el motor que nos mantiene enfocados y entusiasmados a seguir
+            dando lo mejor.
+          </p>
         </div>
+
+        <!-- Project Filters -->
+        <div class="mt-16" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button
+              class="gaming-card neon-border text-white px-6 py-3 rounded-full hover:bg-gamer-magenta hover:scale-105 transition-all duration-300 font-medium filter-btn active"
+              data-filter="all"
+            >
+              Todos
+            </button>
+            <button
+              class="bg-gray-800/50 backdrop-blur-md text-white px-6 py-3 rounded-full hover:bg-gamer-cyan hover:text-black hover:scale-105 transition-all duration-300 font-medium filter-btn"
+              data-filter="web"
+            >
+              Web
+            </button>
+            <button
+              class="bg-gray-800/50 backdrop-blur-md text-white px-6 py-3 rounded-full hover:bg-gamer-green hover:text-black hover:scale-105 transition-all duration-300 font-medium filter-btn"
+              data-filter="app"
+            >
+              App
+            </button>
+            <button
+              class="bg-gray-800/50 backdrop-blur-md text-white px-6 py-3 rounded-full hover:bg-gamer-teal hover:text-black hover:scale-105 transition-all duration-300 font-medium filter-btn"
+              data-filter="ecommerce"
+            >
+              E-commers
+            </button>
+            <button
+              class="bg-gray-800/50 backdrop-blur-md text-white px-6 py-3 rounded-full hover:bg-gamer-pink hover:text-black hover:scale-105 transition-all duration-300 font-medium filter-btn"
+              data-filter="games"
+            >
+              Games
+            </button>
+          </div>
+        </div>
+
+        <!-- Gaming Elements -->
+        <div class="grid md:grid-cols-3 gap-8 mt-16">
+          <div
+            class="gaming-card rounded-2xl p-6 text-center neon-glow"
+            data-aos="fade-up"
+          >
+            <i
+              class="fas fa-gamepad text-6xl text-gamer-magenta mb-4 glow-animation icon-glow-magenta"
+            ></i>
+            <h3 class="text-xl font-bold text-white mb-2">Level Up</h3>
+            <p class="text-gray-300">Siempre mejorando nuestras habilidades</p>
+          </div>
+          <div
+            class="gaming-card rounded-2xl p-6 text-center neon-glow"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <i
+              class="fas fa-trophy text-6xl text-gamer-cyan mb-4 glow-animation icon-glow-cyan"
+            ></i>
+            <h3 class="text-xl font-bold text-white mb-2">Achievement</h3>
+            <p class="text-gray-300">Objetivos alcanzados con éxito</p>
+          </div>
+          <div
+            class="gaming-card rounded-2xl p-6 text-center neon-glow"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <i
+              class="fas fa-rocket text-6xl text-gamer-green mb-4 glow-animation icon-glow-green"
+            ></i>
+            <h3 class="text-xl font-bold text-white mb-2">Power Up</h3>
+            <p class="text-gray-300">Potenciamos tu presencia digital</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl lg:text-5xl font-bold font-poppins mb-6 gradient-text-gamer neon-text">
-                    Acerca de nosotros
-                </h2>
-                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
-                    Esta StartUp es una historia de lucha y superación de un personaje que decidió nunca rendirse y enfocarse en lograr su sueño por él y su familia.
-                </p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-16 items-start">
-                <!-- Testimonials -->
-                <div data-aos="fade-right">
-                    <h3 class="text-3xl font-bold font-poppins mb-8 text-gamer-cyan">Testimonios</h3>
-                    <p class="text-gray-300 mb-8">
-                        Clientes y usuarios confirman el empuje y la pasión con la que demostramos nuestros resultados.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="gaming-card p-6 rounded-2xl neon-glow">
-                            <div class="flex items-center mb-4">
-                                <img src="img/client/1.jpg" alt="Cliente" class="w-12 h-12 rounded-full object-cover mr-4 border-2 border-gamer-magenta">
-                                <div>
-                                    <h4 class="font-semibold text-white">Jhon</h4>
-                                    <p class="text-sm text-gamer-cyan">Salchi - No lo conoce nadie</p>
-                                </div>
-                            </div>
-                            <p class="text-gray-300 italic">"testimonio..."</p>
-                        </div>
-                        
-                        <div class="gaming-card p-6 rounded-2xl neon-glow">
-                            <div class="flex items-center mb-4">
-                                <img src="img/client/2.jpg" alt="Cliente" class="w-12 h-12 rounded-full object-cover mr-4 border-2 border-gamer-green">
-                                <div>
-                                    <h4 class="font-semibold text-white">Raul</h4>
-                                    <p class="text-sm text-gamer-green">Elquetela - Dueño de un famoso baúl</p>
-                                </div>
-                            </div>
-                            <p class="text-gray-300 italic">"testimonio..."</p>
-                        </div>
-                        
-                        <div class="gaming-card p-6 rounded-2xl neon-glow">
-                            <div class="flex items-center mb-4">
-                                <img src="img/client/3.jpg" alt="Cliente" class="w-12 h-12 rounded-full object-cover mr-4 border-2 border-gamer-pink">
-                                <div>
-                                    <h4 class="font-semibold text-white">El Brian</h4>
-                                    <p class="text-sm text-gamer-pink">PUNGA</p>
-                                </div>
-                            </div>
-                            <p class="text-gray-300 italic">"testimonio...."</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Skills -->
-                <div data-aos="fade-left">
-                    <h3 class="text-3xl font-bold font-poppins mb-8 text-gamer-magenta">Nuestras Skills</h3>
-                    <p class="text-gray-300 mb-8">
-                        Lenguajes, editores, softwares, librerías, framewares, en realidad somos mucho más que eso; somos desarrolladores con alma de niños, trabajando en hacer realidad ideas que solucionen problemas y satisfagan deseos.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">HTML 5</span>
-                                <span class="text-gamer-cyan font-semibold">95%</span>
-                            </div>
-                            <div class="bg-gray-700 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-gamer-magenta to-gamer-cyan h-3 rounded-full neon-glow" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">CSS 3</span>
-                                <span class="text-gamer-green font-semibold">93%</span>
-                            </div>
-                            <div class="bg-gray-700 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-gamer-cyan to-gamer-green h-3 rounded-full neon-glow" style="width: 93%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">JavaScript</span>
-                                <span class="text-gamer-pink font-semibold">95%</span>
-                            </div>
-                            <div class="bg-gray-700 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-gamer-green to-gamer-pink h-3 rounded-full neon-glow" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">mySQL</span>
-                                <span class="text-gamer-teal font-semibold">87%</span>
-                            </div>
-                            <div class="bg-gray-700 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-gamer-pink to-gamer-teal h-3 rounded-full neon-glow" style="width: 87%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">Unity</span>
-                                <span class="text-gamer-magenta font-semibold">95%</span>
-                            </div>
-                            <div class="bg-gray-700 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-gamer-teal to-gamer-magenta h-3 rounded-full neon-glow" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">C#</span>
-                                <span class="text-gamer-cyan font-semibold">90%</span>
-                            </div>
-                            <div class="bg-gray-700 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-gamer-magenta to-gamer-cyan h-3 rounded-full neon-glow" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">Node.js</span>
-                                <span class="text-gamer-green font-semibold">85%</span>
-                            </div>
-                            <div class="bg-gray-700 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-gamer-cyan to-gamer-green h-3 rounded-full neon-glow" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-4xl lg:text-5xl font-bold font-poppins mb-6 gradient-text-gamer neon-text"
+          >
+            Acerca de nosotros
+          </h2>
+          <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+            Esta StartUp es una historia de lucha y superación de un personaje
+            que decidió nunca rendirse y enfocarse en lograr su sueño por él y
+            su familia.
+          </p>
         </div>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+          <!-- Testimonials -->
+          <div data-aos="fade-right">
+            <h3 class="text-3xl font-bold font-poppins mb-8 text-gamer-cyan">
+              Testimonios
+            </h3>
+            <p class="text-gray-300 mb-8">
+              Clientes y usuarios confirman el empuje y la pasión con la que
+              demostramos nuestros resultados.
+            </p>
+
+            <div class="space-y-6">
+              <div class="gaming-card p-6 rounded-2xl neon-glow">
+                <div class="flex items-center mb-4">
+                  <img
+                    src="img/client/1.jpg"
+                    alt="Cliente"
+                    class="w-12 h-12 rounded-full object-cover mr-4 border-2 border-gamer-magenta"
+                  />
+                  <div>
+                    <h4 class="font-semibold text-white">Jhon</h4>
+                    <p class="text-sm text-gamer-cyan">
+                      Salchi - No lo conoce nadie
+                    </p>
+                  </div>
+                </div>
+                <p class="text-gray-300 italic">"testimonio..."</p>
+              </div>
+
+              <div class="gaming-card p-6 rounded-2xl neon-glow">
+                <div class="flex items-center mb-4">
+                  <img
+                    src="img/client/2.jpg"
+                    alt="Cliente"
+                    class="w-12 h-12 rounded-full object-cover mr-4 border-2 border-gamer-green"
+                  />
+                  <div>
+                    <h4 class="font-semibold text-white">Raul</h4>
+                    <p class="text-sm text-gamer-green">
+                      Elquetela - Dueño de un famoso baúl
+                    </p>
+                  </div>
+                </div>
+                <p class="text-gray-300 italic">"testimonio..."</p>
+              </div>
+
+              <div class="gaming-card p-6 rounded-2xl neon-glow">
+                <div class="flex items-center mb-4">
+                  <img
+                    src="img/client/3.jpg"
+                    alt="Cliente"
+                    class="w-12 h-12 rounded-full object-cover mr-4 border-2 border-gamer-pink"
+                  />
+                  <div>
+                    <h4 class="font-semibold text-white">El Brian</h4>
+                    <p class="text-sm text-gamer-pink">PUNGA</p>
+                  </div>
+                </div>
+                <p class="text-gray-300 italic">"testimonio...."</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div data-aos="fade-left">
+            <h3 class="text-3xl font-bold font-poppins mb-8 text-gamer-magenta">
+              Nuestras Skills
+            </h3>
+            <p class="text-gray-300 mb-8">
+              Lenguajes, editores, softwares, librerías, framewares, en realidad
+              somos mucho más que eso; somos desarrolladores con alma de niños,
+              trabajando en hacer realidad ideas que solucionen problemas y
+              satisfagan deseos.
+            </p>
+
+            <div class="space-y-6">
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold text-white">HTML 5</span>
+                  <span class="text-gamer-cyan font-semibold">95%</span>
+                </div>
+                <div class="bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-gamer-magenta to-gamer-cyan h-3 rounded-full neon-glow"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold text-white">CSS 3</span>
+                  <span class="text-gamer-green font-semibold">93%</span>
+                </div>
+                <div class="bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-gamer-cyan to-gamer-green h-3 rounded-full neon-glow"
+                    style="width: 93%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold text-white">JavaScript</span>
+                  <span class="text-gamer-pink font-semibold">95%</span>
+                </div>
+                <div class="bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-gamer-green to-gamer-pink h-3 rounded-full neon-glow"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold text-white">mySQL</span>
+                  <span class="text-gamer-teal font-semibold">87%</span>
+                </div>
+                <div class="bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-gamer-pink to-gamer-teal h-3 rounded-full neon-glow"
+                    style="width: 87%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold text-white">Unity</span>
+                  <span class="text-gamer-magenta font-semibold">95%</span>
+                </div>
+                <div class="bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-gamer-teal to-gamer-magenta h-3 rounded-full neon-glow"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold text-white">C#</span>
+                  <span class="text-gamer-cyan font-semibold">90%</span>
+                </div>
+                <div class="bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-gamer-magenta to-gamer-cyan h-3 rounded-full neon-glow"
+                    style="width: 90%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold text-white">Node.js</span>
+                  <span class="text-gamer-green font-semibold">85%</span>
+                </div>
+                <div class="bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-gamer-cyan to-gamer-green h-3 rounded-full neon-glow"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Pricing Section -->
     <section id="pricing" class="py-20 bg-gray-900 relative overflow-hidden">
-        <!-- Background decorative elements -->
-        <div class="absolute top-0 left-0 w-64 h-64 bg-gamer-magenta opacity-5 rounded-full filter blur-3xl"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-gamer-cyan opacity-5 rounded-full filter blur-3xl"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-8" data-aos="fade-up">
-                <div class="inline-flex items-center justify-center mb-6">
-                    <i class="fas fa-gem text-3xl text-gamer-magenta mr-4 glow-animation"></i>
-                    <h2 class="text-4xl lg:text-5xl font-bold font-poppins gradient-text-gamer neon-text">
-                        PRECIOS
-                    </h2>
-                    <i class="fas fa-gem text-3xl text-gamer-cyan ml-4 glow-animation"></i>
-                </div>
-                <p class="text-xl text-gray-300 max-w-4xl mx-auto mb-4">
-                    Planes diseñados para cada nivel de necesidad, desde startups hasta grandes empresas.
-                </p>
-                <div class="w-32 h-1 bg-gradient-to-r from-gamer-magenta to-gamer-cyan mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8 lg:gap-12 mt-16">
-                <!-- Basic Plan -->
-                <div class="gaming-card rounded-3xl p-8 text-center neon-glow hover:scale-105 transition-all duration-300 relative" data-aos="fade-up">
-                    <!-- Decorative corner -->
-                    <div class="absolute top-4 right-4 text-gamer-cyan opacity-50">
-                        <i class="fas fa-code text-2xl"></i>
-                    </div>
-                    
-                    <div class="mb-8">
-                        <i class="fas fa-gamepad text-6xl text-gamer-cyan mb-4 glow-animation"></i>
-                        <h3 class="text-2xl font-bold text-white mb-4">Starter</h3>
-                        <div class="text-4xl font-bold text-gamer-cyan mb-2">$500</div>
-                        <p class="text-gray-400">Por proyecto</p>
-                    </div>
-                    <ul class="text-left space-y-3 mb-8">
-                        <li class="flex items-center text-gray-300"><i class="fas fa-check text-gamer-green mr-3"></i>Landing Page</li>
-                        <li class="flex items-center text-gray-300"><i class="fas fa-check text-gamer-green mr-3"></i>Diseño Responsive</li>
-                        <li class="flex items-center text-gray-300"><i class="fas fa-check text-gamer-green mr-3"></i>Optimización SEO</li>
-                        <li class="flex items-center text-gray-300"><i class="fas fa-check text-gamer-green mr-3"></i>Soporte 30 días</li>
-                    </ul>
-                    <button class="w-full bg-gradient-to-r from-gamer-cyan to-gamer-green text-black px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg">
-                        <i class="fas fa-play mr-2"></i>ELEGIR PLAN
-                    </button>
-                </div>
-                
-                <!-- Pro Plan -->
-                <div class="gaming-card rounded-3xl p-8 text-center neon-border-pink relative hover:scale-105 transition-all duration-300 mt-8 pricing-card-popular" data-aos="fade-up" data-aos-delay="200">
-                    <!-- Badge Superior -->
-                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10">
-                        <div class="bg-gradient-to-r from-gamer-magenta to-gamer-pink text-white px-8 py-3 rounded-full text-sm font-bold shadow-2xl neon-glow border-2 border-white">
-                            <i class="fas fa-crown mr-2"></i>MÁS POPULAR
-                        </div>
-                    </div>
-                    <!-- Decorative Elements -->
-                    <div class="absolute -top-2 -left-2 w-8 h-8 bg-gamer-cyan rounded-full opacity-30 animate-ping"></div>
-                    <div class="absolute -top-2 -right-2 w-8 h-8 bg-gamer-green rounded-full opacity-30 animate-ping" style="animation-delay: 0.5s;"></div>
-                    
-                    <div class="mb-8 mt-8">
-                        <i class="fas fa-trophy text-6xl text-gamer-magenta mb-4 glow-animation"></i>
-                        <h3 class="text-2xl font-bold text-white mb-4">Professional</h3>
-                        <div class="text-4xl font-bold text-gamer-magenta mb-2">$1200</div>
-                        <p class="text-gray-400">Por proyecto</p>
-                    </div>
-                    <ul class="text-left space-y-3 mb-8">
-                        <li class="flex items-center text-gray-300"><i class="fas fa-check text-gamer-green mr-3"></i>App Web Completa</li>
-                        <li class="flex items-center text-gray-300"><i class="fas fa-check text-gamer-green mr-3"></i>Base de Datos</li>
-                        <li class="flex items-center text-gray-300"><i class="fas fa-check text-gamer-green mr-3"></i>Panel de Administración</li>
-                        <li class="flex items-center text-gray-300"><i class="fas fa-check text-gamer-green mr-3"></i>Soporte 90 días</li>
-                    </ul>
-                    <button class="w-full bg-gradient-to-r from-gamer-magenta to-gamer-pink text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg">
-                        <i class="fas fa-star mr-2"></i>ELEGIR PLAN
-                    </button>
-                </div>
-                
-                <!-- Enterprise Plan -->
-                <div class="gaming-card rounded-3xl p-8 text-center neon-glow hover:scale-105 transition-all duration-300 relative" data-aos="fade-up" data-aos-delay="400">
-                    <!-- Premium Badge -->
-                    <div class="absolute top-4 left-4 bg-gradient-to-r from-gamer-green to-gamer-teal text-black px-3 py-1 rounded-full text-xs font-bold">
-                        PREMIUM
-                    </div>
-                    <!-- Decorative corner -->
-                    <div class="absolute top-4 right-4 text-gamer-green opacity-50">
-                        <i class="fas fa-infinity text-2xl"></i>
-                    </div>
-                    
-                    <div class="mb-8">
-                        <i class="fas fa-rocket text-6xl text-gamer-green mb-4 glow-animation"></i>
-                        <h3 class="text-2xl font-bold text-white mb-4">Enterprise</h3>
-                        <div class="text-4xl font-bold text-gamer-green mb-2">Custom</div>
-                        <p class="text-gray-400">Cotización personalizada</p>
-                    </div>
-                    <ul class="text-left space-y-3 mb-8">
-                        <li class="flex items-center text-gray-300"><i class="fas fa-check text-gamer-green mr-3"></i>Videojuego Completo</li>
-                        <li class="flex items-center text-gray-300"><i class="fas fa-check text-gamer-green mr-3"></i>App Móvil</li>
-                        <li class="flex items-center text-gray-300"><i class="fas fa-check text-gamer-green mr-3"></i>Multiplataforma</li>
-                        <li class="flex items-center text-gray-300"><i class="fas fa-check text-gamer-green mr-3"></i>Soporte Ilimitado</li>
-                    </ul>
-                    <button class="w-full bg-gradient-to-r from-gamer-green to-gamer-teal text-black px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg">
-                        <i class="fas fa-comments mr-2"></i>CONTACTAR
-                    </button>
-                </div>
-            </div>
+      <!-- Background decorative elements -->
+      <div
+        class="absolute top-0 left-0 w-64 h-64 bg-gamer-magenta opacity-5 rounded-full filter blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-96 h-96 bg-gamer-cyan opacity-5 rounded-full filter blur-3xl"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-8" data-aos="fade-up">
+          <div class="inline-flex items-center justify-center mb-6">
+            <i
+              class="fas fa-gem text-3xl text-gamer-magenta mr-4 glow-animation icon-glow-magenta"
+            ></i>
+            <h2
+              class="text-4xl lg:text-5xl font-bold font-poppins gradient-text-gamer neon-text"
+            >
+              PRECIOS
+            </h2>
+            <i
+              class="fas fa-gem text-3xl text-gamer-cyan ml-4 glow-animation icon-glow-cyan"
+            ></i>
+          </div>
+          <p class="text-xl text-gray-300 max-w-4xl mx-auto mb-4">
+            Planes diseñados para cada nivel de necesidad, desde startups hasta
+            grandes empresas.
+          </p>
+          <div
+            class="w-32 h-1 bg-gradient-to-r from-gamer-magenta to-gamer-cyan mx-auto rounded-full"
+          ></div>
         </div>
+
+        <div class="grid md:grid-cols-3 gap-8 lg:gap-12 mt-16">
+          <!-- Basic Plan -->
+          <div
+            class="gaming-card rounded-3xl p-8 text-center neon-glow hover:scale-105 transition-all duration-300 relative"
+            data-aos="fade-up"
+          >
+            <!-- Decorative corner -->
+            <div
+              class="absolute top-4 right-4 text-gamer-cyan opacity-70 icon-glow-cyan"
+            >
+              <i class="fas fa-code text-2xl"></i>
+            </div>
+
+            <div class="mb-8">
+              <i
+                class="fas fa-gamepad text-6xl text-gamer-cyan mb-4 glow-animation icon-glow-cyan"
+              ></i>
+              <h3 class="text-2xl font-bold text-white mb-4">Starter</h3>
+              <div class="text-4xl font-bold text-gamer-cyan mb-2">$500</div>
+              <p class="text-gray-400">Por proyecto</p>
+            </div>
+            <ul class="text-left space-y-3 mb-8">
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Landing Page
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Diseño Responsive
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Optimización SEO
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Soporte 30 días
+              </li>
+            </ul>
+            <button
+              class="w-full bg-gradient-to-r from-gamer-cyan to-gamer-green text-black px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg"
+            >
+              <i class="fas fa-play mr-2"></i>ELEGIR PLAN
+            </button>
+          </div>
+
+          <!-- Pro Plan -->
+          <div
+            class="gaming-card rounded-3xl p-8 text-center neon-border-pink relative hover:scale-105 transition-all duration-300 mt-8 pricing-card-popular"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <!-- Badge Superior -->
+            <div
+              class="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10"
+            >
+              <div
+                class="bg-gradient-to-r from-gamer-magenta to-gamer-pink text-white px-8 py-3 rounded-full text-sm font-bold shadow-2xl neon-glow border-2 border-white"
+              >
+                <i class="fas fa-crown mr-2"></i>MÁS POPULAR
+              </div>
+            </div>
+            <!-- Decorative Elements -->
+            <div
+              class="absolute -top-2 -left-2 w-8 h-8 bg-gamer-cyan rounded-full opacity-60 animate-ping shadow-lg shadow-gamer-cyan/50"
+            ></div>
+            <div
+              class="absolute -top-2 -right-2 w-8 h-8 bg-gamer-green rounded-full opacity-60 animate-ping shadow-lg shadow-gamer-green/50"
+              style="animation-delay: 0.5s"
+            ></div>
+
+            <div class="mb-8 mt-8">
+              <i
+                class="fas fa-trophy text-6xl text-gamer-magenta mb-4 glow-animation icon-glow-magenta"
+              ></i>
+              <h3 class="text-2xl font-bold text-white mb-4">Professional</h3>
+              <div class="text-4xl font-bold text-gamer-magenta mb-2">
+                $1200
+              </div>
+              <p class="text-gray-400">Por proyecto</p>
+            </div>
+            <ul class="text-left space-y-3 mb-8">
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >App Web Completa
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Base de Datos
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Panel de Administración
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Soporte 90 días
+              </li>
+            </ul>
+            <button
+              class="w-full bg-gradient-to-r from-gamer-magenta to-gamer-pink text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg"
+            >
+              <i class="fas fa-star mr-2"></i>ELEGIR PLAN
+            </button>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div
+            class="gaming-card rounded-3xl p-8 text-center neon-glow hover:scale-105 transition-all duration-300 relative"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <!-- Premium Badge -->
+            <div
+              class="absolute top-4 left-4 bg-gradient-to-r from-gamer-green to-gamer-teal text-black px-3 py-1 rounded-full text-xs font-bold"
+            >
+              PREMIUM
+            </div>
+            <!-- Decorative corner -->
+            <div
+              class="absolute top-4 right-4 text-gamer-green opacity-70 icon-glow-green"
+            >
+              <i class="fas fa-infinity text-2xl"></i>
+            </div>
+
+            <div class="mb-8">
+              <i
+                class="fas fa-rocket text-6xl text-gamer-green mb-4 glow-animation icon-glow-green"
+              ></i>
+              <h3 class="text-2xl font-bold text-white mb-4">Enterprise</h3>
+              <div class="text-4xl font-bold text-gamer-green mb-2">Custom</div>
+              <p class="text-gray-400">Cotización personalizada</p>
+            </div>
+            <ul class="text-left space-y-3 mb-8">
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Videojuego Completo
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >App Móvil
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Multiplataforma
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Soporte Ilimitado
+              </li>
+            </ul>
+            <button
+              class="w-full bg-gradient-to-r from-gamer-green to-gamer-teal text-black px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg"
+            >
+              <i class="fas fa-comments mr-2"></i>CONTACTAR
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl lg:text-5xl font-bold font-poppins mb-6 gradient-text-gamer neon-text">
-                    CONTACTANOS
-                </h2>
-                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
-                    Si tienes interés en adquirir nuestros servicios, completa el formulario y te contactaremos.
-                </p>
-            </div>
-            
-            <div class="max-w-4xl mx-auto">
-                <div class="gaming-card rounded-3xl p-8 lg:p-12 neon-glow" data-aos="fade-up" data-aos-delay="200">
-                    <form class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block text-sm font-semibold text-gamer-cyan mb-2">Nombre</label>
-                                <input type="text" id="name" name="name" required 
-                                       class="w-full px-4 py-3 bg-gray-700 border border-gamer-cyan rounded-xl focus:ring-2 focus:ring-gamer-magenta focus:border-gamer-magenta transition-all duration-300 text-white placeholder-gray-400"
-                                       placeholder="Ingresa tu nombre">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-semibold text-gamer-green mb-2">E-mail</label>
-                                <input type="email" id="email" name="email" required 
-                                       class="w-full px-4 py-3 bg-gray-700 border border-gamer-green rounded-xl focus:ring-2 focus:ring-gamer-magenta focus:border-gamer-magenta transition-all duration-300 text-white placeholder-gray-400"
-                                       placeholder="tu@email.com">
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-sm font-semibold text-gamer-magenta mb-2">Mensaje</label>
-                            <textarea id="message" name="message" rows="6" required 
-                                      class="w-full px-4 py-3 bg-gray-700 border border-gamer-magenta rounded-xl focus:ring-2 focus:ring-gamer-cyan focus:border-gamer-cyan transition-all duration-300 resize-none text-white placeholder-gray-400"
-                                      placeholder="Cuéntanos sobre tu proyecto..."></textarea>
-                        </div>
-                        
-                        <div class="text-center">
-                            <button type="submit" 
-                                    class="bg-gradient-to-r from-gamer-magenta to-gamer-cyan text-white px-8 py-4 rounded-full font-semibold neon-glow hover:scale-105 transform transition-all duration-300">
-                                <i class="fas fa-paper-plane mr-2"></i>
-                                ENVIAR MENSAJE
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-4xl lg:text-5xl font-bold font-poppins mb-6 gradient-text-gamer neon-text"
+          >
+            CONTACTANOS
+          </h2>
+          <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+            Si tienes interés en adquirir nuestros servicios, completa el
+            formulario y te contactaremos.
+          </p>
         </div>
+
+        <div class="max-w-4xl mx-auto">
+          <div
+            class="gaming-card rounded-3xl p-8 lg:p-12 neon-glow"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <form class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-sm font-semibold text-gamer-cyan mb-2"
+                    >Nombre</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full px-4 py-3 bg-gray-700 border border-gamer-cyan rounded-xl focus:ring-2 focus:ring-gamer-magenta focus:border-gamer-magenta transition-all duration-300 text-white placeholder-gray-400"
+                    placeholder="Ingresa tu nombre"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-semibold text-gamer-green mb-2"
+                    >E-mail</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 bg-gray-700 border border-gamer-green rounded-xl focus:ring-2 focus:ring-gamer-magenta focus:border-gamer-magenta transition-all duration-300 text-white placeholder-gray-400"
+                    placeholder="tu@email.com"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-semibold text-gamer-magenta mb-2"
+                  >Mensaje</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  required
+                  class="w-full px-4 py-3 bg-gray-700 border border-gamer-magenta rounded-xl focus:ring-2 focus:ring-gamer-cyan focus:border-gamer-cyan transition-all duration-300 resize-none text-white placeholder-gray-400"
+                  placeholder="Cuéntanos sobre tu proyecto..."
+                ></textarea>
+              </div>
+
+              <div class="text-center">
+                <button
+                  type="submit"
+                  class="bg-gradient-to-r from-gamer-magenta to-gamer-cyan text-white px-8 py-4 rounded-full font-semibold neon-glow hover:scale-105 transform transition-all duration-300"
+                >
+                  <i class="fas fa-paper-plane mr-2"></i>
+                  ENVIAR MENSAJE
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-black text-white py-16 border-t border-gamer-cyan">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <div class="mb-8" data-aos="fade-up">
-                    <img src="img/icons/lugo.png" alt="Klanstart" class="h-12 w-auto mx-auto mb-4 glow-animation">
-                    <h3 class="text-2xl font-bold font-poppins gradient-text-gamer neon-text">KLANSTART</h3>
-                </div>
-                
-                <div class="mb-8" data-aos="fade-up" data-aos-delay="100">
-                    <h4 class="text-xl font-semibold mb-4 text-gamer-cyan">Nuestras Redes Sociales</h4>
-                    <div class="flex justify-center space-x-6">
-                        <a href="https://goo.gl/RqhEjP" class="gaming-card w-12 h-12 rounded-full flex items-center justify-center hover:bg-gamer-cyan hover:text-black transition-all duration-300 neon-glow">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://goo.gl/hUfpSB" class="gaming-card w-12 h-12 rounded-full flex items-center justify-center hover:bg-gamer-green hover:text-black transition-all duration-300 neon-glow">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://goo.gl/r4xzR4" class="gaming-card w-12 h-12 rounded-full flex items-center justify-center hover:bg-gamer-magenta hover:text-white transition-all duration-300 neon-glow">
-                            <i class="fab fa-google-plus-g"></i>
-                        </a>
-                        <a href="https://goo.gl/k9zAy5" class="gaming-card w-12 h-12 rounded-full flex items-center justify-center hover:bg-gamer-pink hover:text-white transition-all duration-300 neon-glow">
-                            <i class="fab fa-dribbble"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="border-t border-gamer-magenta pt-8" data-aos="fade-up" data-aos-delay="200">
-                    <p class="text-gray-300 text-lg">
-                        Nunca dejes de <span class="text-gamer-green font-semibold neon-text">jugar</span> porque la vida no es un PREMIO al final, 
-                        <span class="text-gamer-cyan font-semibold neon-text">la vida son los TESOROS del camino.</span>
-                    </p>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <div class="mb-8" data-aos="fade-up">
+            <img
+              src="img/icons/lugo.png"
+              alt="Klanstart"
+              class="h-12 w-auto mx-auto mb-4 glow-animation icon-glow"
+            />
+            <h3
+              class="text-2xl font-bold font-poppins gradient-text-gamer neon-text"
+            >
+              KLANSTART
+            </h3>
+          </div>
+
+          <div class="mb-8" data-aos="fade-up" data-aos-delay="100">
+            <h4 class="text-xl font-semibold mb-4 text-gamer-cyan">
+              Nuestras Redes Sociales
+            </h4>
+            <div class="flex justify-center space-x-6">
+              <a
+                href="https://goo.gl/RqhEjP"
+                class="gaming-card w-12 h-12 rounded-full flex items-center justify-center hover:bg-gamer-cyan hover:text-black transition-all duration-300 neon-glow"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://goo.gl/hUfpSB"
+                class="gaming-card w-12 h-12 rounded-full flex items-center justify-center hover:bg-gamer-green hover:text-black transition-all duration-300 neon-glow"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="https://goo.gl/r4xzR4"
+                class="gaming-card w-12 h-12 rounded-full flex items-center justify-center hover:bg-gamer-magenta hover:text-white transition-all duration-300 neon-glow"
+              >
+                <i class="fab fa-google-plus-g"></i>
+              </a>
+              <a
+                href="https://goo.gl/k9zAy5"
+                class="gaming-card w-12 h-12 rounded-full flex items-center justify-center hover:bg-gamer-pink hover:text-white transition-all duration-300 neon-glow"
+              >
+                <i class="fab fa-dribbble"></i>
+              </a>
             </div>
+          </div>
+
+          <div
+            class="border-t border-gamer-magenta pt-8"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <p class="text-gray-300 text-lg">
+              Nunca dejes de
+              <span class="text-gamer-green font-semibold neon-text"
+                >jugar</span
+              >
+              porque la vida no es un PREMIO al final,
+              <span class="text-gamer-cyan font-semibold neon-text"
+                >la vida son los TESOROS del camino.</span
+              >
+            </p>
+          </div>
         </div>
+      </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-gradient-to-r from-gamer-magenta to-gamer-cyan text-white w-12 h-12 rounded-full neon-glow hover:scale-110 transition-all duration-300 opacity-0 invisible">
-        <i class="fas fa-chevron-up"></i>
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 bg-gradient-to-r from-gamer-magenta to-gamer-cyan text-white w-12 h-12 rounded-full neon-glow hover:scale-110 transition-all duration-300 opacity-0 invisible"
+    >
+      <i class="fas fa-chevron-up"></i>
     </button>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+
+      // Carousel functionality
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".carousel-slide");
+      const indicators = document.querySelectorAll(".carousel-indicator");
+      const totalSlides = slides.length;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.style.opacity = i === index ? "1" : "0";
         });
 
-        // Carousel functionality
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const indicators = document.querySelectorAll('.carousel-indicator');
-        const totalSlides = slides.length;
+        indicators.forEach((indicator, i) => {
+          if (i === index) {
+            indicator.classList.add("bg-gamer-magenta");
+            indicator.classList.remove("bg-white");
+          } else {
+            indicator.classList.add("bg-white");
+            indicator.classList.remove("bg-gamer-magenta");
+          }
+        });
+      }
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.opacity = i === index ? '1' : '0';
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+      }
+
+      function previousSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(currentSlide);
+      }
+
+      function changeSlide(index) {
+        currentSlide = index;
+        showSlide(currentSlide);
+      }
+
+      // Auto-advance carousel
+      setInterval(nextSlide, 5000);
+
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+      }
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        const backToTop = document.getElementById("back-to-top");
+
+        if (window.scrollY > 50) {
+          navbar.classList.add("navbar-scrolled");
+          backToTop.classList.remove("opacity-0", "invisible");
+        } else {
+          navbar.classList.remove("navbar-scrolled");
+          backToTop.classList.add("opacity-0", "invisible");
+        }
+      });
+
+      // Back to top functionality
+      document
+        .getElementById("back-to-top")
+        .addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
             });
-            
-            indicators.forEach((indicator, i) => {
-                if (i === index) {
-                    indicator.classList.add('bg-gamer-magenta');
-                    indicator.classList.remove('bg-white');
-                } else {
-                    indicator.classList.add('bg-white');
-                    indicator.classList.remove('bg-gamer-magenta');
-                }
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
-        }
-
-        function previousSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            showSlide(currentSlide);
-        }
-
-        function changeSlide(index) {
-            currentSlide = index;
-            showSlide(currentSlide);
-        }
-
-        // Auto-advance carousel
-        setInterval(nextSlide, 5000);
-
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            const backToTop = document.getElementById('back-to-top');
-            
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-xl');
-                backToTop.classList.remove('opacity-0', 'invisible');
-            } else {
-                navbar.classList.remove('shadow-xl');
-                backToTop.classList.add('opacity-0', 'invisible');
-            }
+          }
+          // Close mobile menu if open
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.add("hidden");
         });
+      });
 
-        // Back to top functionality
-        document.getElementById('back-to-top').addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Filter functionality
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          // Remove active classes from all buttons
+          document.querySelectorAll(".filter-btn").forEach((b) => {
+            b.classList.remove("neon-border", "bg-gamer-magenta");
+            b.classList.add("bg-gray-800/50");
+          });
+          // Add active class to clicked button
+          this.classList.remove("bg-gray-800/50");
+          this.classList.add("neon-border", "bg-gamer-magenta");
         });
+      });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-                // Close mobile menu if open
-                const mobileMenu = document.getElementById('mobile-menu');
-                mobileMenu.classList.add('hidden');
-            });
-        });
+      // Form submission
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        // Gaming-style alert
+        const button = this.querySelector('button[type="submit"]');
+        const originalText = button.innerHTML;
 
-        // Filter functionality
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                // Remove active classes from all buttons
-                document.querySelectorAll('.filter-btn').forEach(b => {
-                    b.classList.remove('neon-border', 'bg-gamer-magenta');
-                    b.classList.add('bg-gray-800/50');
-                });
-                // Add active class to clicked button
-                this.classList.remove('bg-gray-800/50');
-                this.classList.add('neon-border', 'bg-gamer-magenta');
-            });
-        });
+        button.innerHTML =
+          '<i class="fas fa-spinner fa-spin mr-2"></i>ENVIANDO...';
+        button.disabled = true;
 
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Gaming-style alert
-            const button = this.querySelector('button[type="submit"]');
-            const originalText = button.innerHTML;
-            
-            button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>ENVIANDO...';
-            button.disabled = true;
-            
+        setTimeout(() => {
+          button.innerHTML =
+            '<i class="fas fa-check mr-2"></i>¡MISIÓN COMPLETADA!';
+          button.classList.add("bg-gamer-green");
+
+          setTimeout(() => {
+            alert(
+              "🎮 ¡LEVEL UP! Tu mensaje ha sido enviado. Nos pondremos en contacto contigo pronto."
+            );
+            button.innerHTML = originalText;
+            button.disabled = false;
+            button.classList.remove("bg-gamer-green");
+            this.reset();
+          }, 2000);
+        }, 1500);
+      });
+
+      // Add some gaming effects
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add random glitch effect to neon text occasionally
+        setInterval(() => {
+          const neonTexts = document.querySelectorAll(".neon-text");
+          if (Math.random() < 0.1) {
+            // 10% chance
+            const randomText =
+              neonTexts[Math.floor(Math.random() * neonTexts.length)];
+            randomText.style.textShadow = "2px 0 #ff00ff, -2px 0 #00ffff";
             setTimeout(() => {
-                button.innerHTML = '<i class="fas fa-check mr-2"></i>¡MISIÓN COMPLETADA!';
-                button.classList.add('bg-gamer-green');
-                
-                setTimeout(() => {
-                    alert('🎮 ¡LEVEL UP! Tu mensaje ha sido enviado. Nos pondremos en contacto contigo pronto.');
-                    button.innerHTML = originalText;
-                    button.disabled = false;
-                    button.classList.remove('bg-gamer-green');
-                    this.reset();
-                }, 2000);
-            }, 1500);
-        });
-
-        // Add some gaming effects
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add random glitch effect to neon text occasionally
-            setInterval(() => {
-                const neonTexts = document.querySelectorAll('.neon-text');
-                if (Math.random() < 0.1) { // 10% chance
-                    const randomText = neonTexts[Math.floor(Math.random() * neonTexts.length)];
-                    randomText.style.textShadow = '2px 0 #ff00ff, -2px 0 #00ffff';
-                    setTimeout(() => {
-                        randomText.style.textShadow = '';
-                    }, 100);
-                }
-            }, 3000);
-        });
+              randomText.style.textShadow = "";
+            }, 100);
+          }
+        }, 3000);
+      });
     </script>
-</body>
-</html> 
+  </body>
+</html>

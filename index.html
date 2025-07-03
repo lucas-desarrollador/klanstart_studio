@@ -1,807 +1,1787 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-    <head>
-        <!-- Mobile Specific Meta -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Always force latest IE rendering engine -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!-- Meta Keyword -->
-        <meta name="keywords" content="one page, business template, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
-        <!-- meta character set -->
-        <meta charset="utf-8">
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Klanstart - Empresa de desarrollo web, apps móviles y videojuegos"
+    />
+    <meta
+      name="keywords"
+      content="desarrollo web, apps móviles, videojuegos, desarrollo software"
+    />
+    <title>KLANSTART - Desarrollo de Software Innovador</title>
 
-        <!-- Site Title -->
-        <title>KLANSTART</title>
-        
-        <!--
-       Fuentes de Google
-        ============================================= -->
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
-        <link rel="icon" type="image" href="./css/icono.jpg" />
-        <!--
-        CSS
-        ============================================= -->
-        <!-- Fuentes asombrosas -->
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <!-- Fancybox -->
-        <link rel="stylesheet" href="css/jquery.fancybox.css">
-        <!-- owl carousel -->
-        <link rel="stylesheet" href="css/owl.carousel.css">
-        <!-- Animate -->
-        <link rel="stylesheet" href="css/animate.css">
-        <!-- Main Stylesheet -->
-        <link rel="stylesheet" href="css/main.css">
-        <!-- Main Responsive -->
-        <link rel="stylesheet" href="css/responsive.css">
-		
-		
-		<!-- Modernizer Script for old Browsers -->
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-		
-    </head>
-	
-    <body>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS - Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-        <!--
-        Fixed Navigation
-        ==================================== -->
-        <header id="navigation" class="navbar-fixed-top">
-            <div class="container">
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background: #0e0e11;
+      }
+      .font-poppins {
+        font-family: "Poppins", sans-serif;
+      }
 
-                <div class="navbar-header">
-                    <!-- responsive nav button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!-- /responsive nav button -->
+      /* Custom animations */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+      @keyframes glow {
+        0%,
+        100% {
+          filter: drop-shadow(0 0 8px #18f2b2);
+        }
+        50% {
+          filter: drop-shadow(0 0 12px #18f2b2);
+        }
+      }
+      @keyframes neonPulse {
+        0%,
+        100% {
+          text-shadow: 0 0 5px #4b5cc4, 0 0 10px #4b5cc4;
+        }
+        50% {
+          text-shadow: 0 0 8px #4b5cc4, 0 0 15px #4b5cc4;
+        }
+      }
+      .float-animation {
+        animation: float 6s ease-in-out infinite;
+      }
+      .glow-animation {
+        animation: glow 3s ease-in-out infinite;
+      }
+      .neon-text {
+        animation: neonPulse 2s ease-in-out infinite;
+      }
 
-                    <!-- logo -->
-                    <h1 class="navbar-brand">
-                        <a href="#body">
-                            <img src="img//icons/lugo.png" class="media-object" alt="klanstart">
-                        </a>
-                    </h1>
-                    <!-- /logo -->
+      /* NeonDusk gradient backgrounds */
+      .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          #4b5cc4 0%,
+          #18f2b2 50%,
+          #4b5cc4 100%
+        );
+      }
+      .gradient-dusk {
+        background: linear-gradient(
+          135deg,
+          #4b5cc4 0%,
+          #18f2b2 25%,
+          #ff6b5e 50%,
+          #4b5cc4 75%,
+          #18f2b2 100%
+        );
+      }
+      .gradient-text {
+        background: linear-gradient(135deg, #4b5cc4 0%, #18f2b2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .gradient-text-dusk {
+        background: linear-gradient(135deg, #4b5cc4 0%, #18f2b2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-                    </div>
+      /* Subtle borders and effects */
+      .neon-border {
+        border: 1px solid #18f2b2;
+        box-shadow: 0 0 8px rgba(24, 242, 178, 0.3);
+      }
+      .neon-border-primary {
+        border: 1px solid #4b5cc4;
+        box-shadow: 0 0 8px rgba(75, 92, 196, 0.3);
+      }
+      .neon-glow {
+        box-shadow: 0 0 15px rgba(24, 242, 178, 0.2),
+          inset 0 0 15px rgba(24, 242, 178, 0.05);
+      }
 
-                    <!-- main nav -->
-                    <nav class="collapse navigation navbar-collapse navbar-right" role="navigation">
-                        <ul id="nav" class="nav navbar-nav">
-                            
-                            <li class="current"><a href="#home">Home</a></li>
-                            <li><a href="#service">Servicios</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
-                            <li><a href="#about">Acerca de nosotros</a></li>
-                            <li><a href="#pricing">Precios</a></li>
-                            <li><a href="#contact">Contacto</a></li>
-                        </ul>
-                    </nav>
-                    <!-- /main nav -->
+      /* Drop shadows for images and icons */
+      .icon-glow {
+        filter: drop-shadow(0 0 8px rgba(24, 242, 178, 0.4));
+      }
+      .icon-glow-primary {
+        filter: drop-shadow(0 0 8px rgba(75, 92, 196, 0.4));
+      }
+      .icon-glow-accent {
+        filter: drop-shadow(0 0 8px rgba(255, 107, 94, 0.4));
+      }
+      .icon-glow-cyan {
+        filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.4));
+      }
+      .icon-glow-magenta {
+        filter: drop-shadow(0 0 8px rgba(255, 0, 255, 0.4));
+      }
+      .icon-glow-pink {
+        filter: drop-shadow(0 0 8px rgba(255, 20, 147, 0.4));
+      }
+      .icon-glow-green {
+        filter: drop-shadow(0 0 8px rgba(0, 255, 127, 0.4));
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1b22;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(45deg, #4b5cc4, #18f2b2);
+        border-radius: 6px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(45deg, #ff6b5e, #18f2b2);
+      }
+
+      /* NeonDusk cards */
+      .gaming-card {
+        background: linear-gradient(145deg, #1a1b22 0%, #2c2d36 100%);
+        border: 1px solid #2c2d36;
+        transition: all 0.3s ease;
+      }
+      .gaming-card:hover {
+        transform: translateY(-5px) scale(1.01);
+        box-shadow: 0 10px 25px rgba(75, 92, 196, 0.2), 0 0 0 1px #4b5cc4;
+      }
+
+      /* Pricing cards adjustments */
+      @media (max-width: 768px) {
+        .pricing-card-popular {
+          margin-top: 2rem !important;
+          margin-bottom: 2rem !important;
+        }
+      }
+
+      /* Modern navbar styles */
+      .navbar-modern {
+        background: linear-gradient(
+          90deg,
+          rgba(26, 27, 34, 0.95) 0%,
+          rgba(44, 45, 54, 0.95) 50%,
+          rgba(26, 27, 34, 0.95) 100%
+        );
+        border-bottom: 1px solid rgba(75, 92, 196, 0.2);
+        box-shadow: 0 4px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      .navbar-scrolled {
+        background: rgba(14, 14, 17, 0.98) !important;
+        border-bottom: 1px solid rgba(24, 242, 178, 0.3);
+        box-shadow: 0 8px 32px rgba(75, 92, 196, 0.15);
+      }
+
+      /* Modern nav links */
+      .nav-link {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #4b5cc4, #18f2b2);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::before {
+        width: 100%;
+      }
+
+      /* Gaming specific gradients and borders */
+      .neon-border-pink {
+        border: 1px solid #ff1493;
+        box-shadow: 0 0 8px rgba(255, 20, 147, 0.3);
+      }
+      .gradient-text-gamer {
+        background: linear-gradient(
+          135deg,
+          #ff00ff 0%,
+          #00ffff 50%,
+          #00ff7f 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+             .gradient-gamer {
+         background: linear-gradient(
+           135deg,
+           #1a1b22 0%,
+           #ff00ff 25%,
+           #00ffff 50%,
+           #00ff7f 75%,
+           #1a1b22 100%
+         );
+       }
+       
+       /* Parallax Gaming Elements */
+       .parallax-container {
+         position: relative;
+         overflow: hidden;
+       }
+       
+       .parallax-element {
+         position: absolute;
+         pointer-events: none;
+         z-index: 1;
+         opacity: 0.7;
+         transition: transform 0.1s ease-out;
+       }
+       
+       .gaming-particle {
+         width: 40px;
+         height: 40px;
+         background: rgba(24, 242, 178, 0.1);
+         border: 1px solid rgba(24, 242, 178, 0.3);
+         border-radius: 50%;
+         animation: particleFloat 8s ease-in-out infinite;
+       }
+       
+       .gaming-particle::before {
+         content: '';
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: 8px;
+         height: 8px;
+         background: #18F2B2;
+         border-radius: 50%;
+         box-shadow: 0 0 10px #18F2B2;
+       }
+       
+       .gaming-hexagon {
+         width: 60px;
+         height: 34px;
+         background: rgba(75, 92, 196, 0.1);
+         border: 1px solid rgba(75, 92, 196, 0.3);
+         position: relative;
+         margin: 17px 0;
+         animation: hexagonRotate 12s linear infinite;
+       }
+       
+       .gaming-hexagon::before,
+       .gaming-hexagon::after {
+         content: "";
+         position: absolute;
+         width: 0;
+         border-left: 30px solid transparent;
+         border-right: 30px solid transparent;
+       }
+       
+       .gaming-hexagon::before {
+         bottom: 100%;
+         border-bottom: 17px solid rgba(75, 92, 196, 0.1);
+       }
+       
+       .gaming-hexagon::after {
+         top: 100%;
+         border-top: 17px solid rgba(75, 92, 196, 0.1);
+       }
+       
+       .gaming-circuit {
+         width: 80px;
+         height: 80px;
+         background: linear-gradient(45deg, 
+           transparent 30%, 
+           rgba(255, 0, 255, 0.1) 30%, 
+           rgba(255, 0, 255, 0.1) 70%, 
+           transparent 70%);
+         border: 1px solid rgba(255, 0, 255, 0.3);
+         animation: circuitPulse 6s ease-in-out infinite;
+       }
+       
+       .gaming-gear {
+         width: 50px;
+         height: 50px;
+         border: 3px solid rgba(0, 255, 255, 0.3);
+         border-radius: 50%;
+         position: relative;
+         animation: gearRotate 10s linear infinite;
+       }
+       
+       .gaming-gear::before {
+         content: '';
+         position: absolute;
+         top: -3px;
+         left: -3px;
+         right: -3px;
+         bottom: -3px;
+         border: 2px solid rgba(0, 255, 255, 0.2);
+         border-radius: 50%;
+         border-top-color: rgba(0, 255, 255, 0.6);
+         border-right-color: rgba(0, 255, 255, 0.6);
+       }
+       
+       @keyframes particleFloat {
+         0%, 100% { transform: translateY(0px) scale(1); }
+         25% { transform: translateY(-15px) scale(1.1); }
+         50% { transform: translateY(-30px) scale(0.9); }
+         75% { transform: translateY(-15px) scale(1.1); }
+       }
+       
+       @keyframes hexagonRotate {
+         0% { transform: rotate(0deg); }
+         100% { transform: rotate(360deg); }
+       }
+       
+       @keyframes circuitPulse {
+         0%, 100% { opacity: 0.3; transform: scale(1); }
+         50% { opacity: 0.8; transform: scale(1.1); }
+       }
+       
+       @keyframes gearRotate {
+         0% { transform: rotate(0deg); }
+         100% { transform: rotate(360deg); }
+       }
+       
+       .parallax-icon {
+         width: 60px;
+         height: 60px;
+         opacity: 0.4;
+         filter: drop-shadow(0 0 10px rgba(24, 242, 178, 0.3));
+         animation: iconFloat 7s ease-in-out infinite;
+       }
+       
+       @keyframes iconFloat {
+         0%, 100% { transform: translateY(0px) rotate(0deg); }
+         33% { transform: translateY(-20px) rotate(5deg); }
+         66% { transform: translateY(10px) rotate(-3deg); }
+       }
+    </style>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4B5CC4",
+              secondary: "#18F2B2",
+              accent: "#FF6B5E",
+              dusk: {
+                bg: "#0E0E11",
+                surface: "#1A1B22",
+                border: "#2C2D36",
+                textPrimary: "#ECECF1",
+                textSecondary: "#A7A9BD",
+                accentPrimary: "#4B5CC4",
+                accentSuccess: "#18F2B2",
+                accentAlert: "#FF6B5E",
+              },
+              gamer: {
+                cyan: "#00FFFF",
+                magenta: "#FF00FF",
+                pink: "#FF1493",
+                green: "#00FF7F",
+                teal: "#40E0D0",
+                purple: "#9A4DFF",
+                orange: "#FF8C00",
+                yellow: "#FFD700",
+              },
+            },
+            boxShadow: {
+              "gamer-cyan": "0 0 15px rgba(0, 255, 255, 0.5)",
+              "gamer-green": "0 0 15px rgba(0, 255, 127, 0.5)",
+              "gamer-magenta": "0 0 15px rgba(255, 0, 255, 0.5)",
+              "gamer-pink": "0 0 15px rgba(255, 20, 147, 0.5)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-dusk-bg text-dusk-textPrimary">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full backdrop-blur-lg z-50 navbar-modern transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center">
+            <img
+              src="img/icons/lugo.png"
+              alt="Klanstart"
+              class="h-10 w-auto glow-animation icon-glow"
+            />
+            <span
+              class="ml-3 text-2xl font-bold font-poppins gradient-text-dusk neon-text"
+              >KLANSTART</span
+            >
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Home</a
+            >
+            <a
+              href="#service"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Servicios</a
+            >
+            <a
+              href="#vision"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Vision</a
+            >
+            <a
+              href="#about"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Acerca de nosotros</a
+            >
+            <a
+              href="#pricing"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Precios</a
+            >
+            <a
+              href="#contact"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Contacto</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button class="text-dusk-textPrimary" onclick="toggleMobileMenu()">
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-dusk-surface/95 border-t border-dusk-accentSuccess"
+      >
+        <div class="px-4 py-2 space-y-1">
+          <a
+            href="#home"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Home</a
+          >
+          <a
+            href="#service"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Servicios</a
+          >
+          <a
+            href="#vision"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Vision</a
+          >
+          <a
+            href="#about"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Acerca de nosotros</a
+          >
+          <a
+            href="#pricing"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Precios</a
+          >
+          <a
+            href="#contact"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Contacto</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Carousel Section -->
+    <section id="home" class="min-h-screen relative overflow-hidden parallax-container">
+      <!-- Hero Parallax Gaming Elements -->
+      <div class="parallax-element gaming-particle" style="top: 15%; left: 12%; animation-delay: 0s; z-index: 2;"></div>
+      <div class="parallax-element gaming-gear" style="top: 25%; right: 10%; animation-delay: 2s; z-index: 2;"></div>
+      <img src="img/icons/lugo.png" alt="" class="parallax-element parallax-icon" style="top: 70%; left: 8%; animation-delay: 1s; z-index: 2; opacity: 0.2;" />
+      <div class="parallax-element gaming-hexagon" style="top: 80%; right: 15%; animation-delay: 3s; z-index: 2;"></div>
+      <div class="parallax-element gaming-circuit" style="top: 45%; left: 5%; animation-delay: 4s; z-index: 2;"></div>
+      
+      <div class="carousel-container relative h-screen">
+        <!-- Slide 1: Videojuegos -->
+        <div
+          class="carousel-slide active absolute inset-0 transition-opacity duration-1000"
+          style="
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('img/slider/logo5.png') center/cover;
+          "
+        >
+          <div class="flex items-center justify-center h-full">
+            <div
+              class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
+              data-aos="fade-up"
+            >
+              <img
+                src="img/icons/titulo3.png"
+                alt="Gaming"
+                class="mx-auto mb-8 h-20 w-auto glow-animation icon-glow-magenta"
+              />
+              <h1
+                class="text-4xl lg:text-6xl font-bold font-poppins mb-6 neon-text gradient-text-gamer"
+              >
+                DESARROLLO DE VIDEOJUEGOS
+              </h1>
+              <p class="text-xl lg:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
+                Defendemos la idea de que no todo está inventado, por eso
+                innovamos con el desarrollo de videojuegos también como
+                herramientas para empresas.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="#service"
+                  class="bg-gradient-to-r from-dusk-accentPrimary to-dusk-accentSuccess text-white px-8 py-4 rounded-full font-semibold neon-glow hover:scale-105 transition-all duration-300"
+                >
+                  Ver Servicios
+                </a>
+                <a
+                  href="#contact"
+                  class="neon-border-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-dusk-accentPrimary transition-all duration-300"
+                >
+                  Contáctanos
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Apps Móviles -->
+        <div
+          class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+          style="
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('img/slider/mobile.png') center/cover;
+          "
+        >
+          <div class="flex items-center justify-center h-full">
+            <div
+              class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
+              data-aos="fade-up"
+            >
+              <img
+                src="img/icons/titulo2.png"
+                alt="Mobile"
+                class="mx-auto mb-8 h-20 w-auto glow-animation icon-glow-cyan"
+              />
+              <h1
+                class="text-4xl lg:text-6xl font-bold font-poppins mb-6 neon-text gradient-text-gamer"
+              >
+                APLICACIONES PARA DISPOSITIVOS MÓVILES
+              </h1>
+              <p class="text-xl lg:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
+                Entendemos las necesidades del mundo actual y el celular es una
+                herramienta esencial para todas las personas en casi todos los
+                aspectos de su vida.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="#service"
+                  class="bg-gradient-to-r from-dusk-accentSuccess to-dusk-accentAlert text-black px-8 py-4 rounded-full font-semibold neon-glow hover:scale-105 transition-all duration-300"
+                >
+                  Ver Servicios
+                </a>
+                <a
+                  href="#contact"
+                  class="neon-border text-white px-8 py-4 rounded-full font-semibold hover:bg-dusk-accentSuccess transition-all duration-300"
+                >
+                  Contáctanos
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Web Responsive -->
+        <div
+          class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000"
+          style="
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('img/slider/fondo4.jpeg') center/cover;
+          "
+        >
+          <div class="flex items-center justify-center h-full">
+            <div
+              class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
+              data-aos="fade-up"
+            >
+              <img
+                src="img/icons/titulo3c.png"
+                alt="Web"
+                class="mx-auto mb-8 h-20 w-auto glow-animation icon-glow-green"
+              />
+              <h1
+                class="text-4xl lg:text-6xl font-bold font-poppins mb-6 neon-text gradient-text-gamer"
+              >
+                WEB RESPONSIVE
+              </h1>
+              <p class="text-xl lg:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
+                Nuestro objetivo principal es satisfacer la necesidad del
+                usuario valorando al cliente como un integrante de nuestra
+                familia Klanstart.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="#service"
+                  class="bg-gradient-to-r from-dusk-accentAlert to-dusk-accentPrimary text-white px-8 py-4 rounded-full font-semibold neon-glow hover:scale-105 transition-all duration-300"
+                >
+                  Ver Servicios
+                </a>
+                <a
+                  href="#contact"
+                  class="neon-border text-white px-8 py-4 rounded-full font-semibold hover:bg-dusk-accentAlert transition-all duration-300"
+                >
+                  Contáctanos
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Navigation -->
+        <div
+          class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4"
+        >
+          <button
+            class="carousel-indicator active w-4 h-4 bg-dusk-accentPrimary rounded-full"
+            onclick="changeSlide(0)"
+          ></button>
+          <button
+            class="carousel-indicator w-4 h-4 bg-white/50 rounded-full"
+            onclick="changeSlide(1)"
+          ></button>
+          <button
+            class="carousel-indicator w-4 h-4 bg-white/50 rounded-full"
+            onclick="changeSlide(2)"
+          ></button>
+        </div>
+
+        <!-- Carousel Arrows -->
+        <button
+          class="absolute left-8 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:text-dusk-accentSuccess transition-colors"
+          onclick="previousSlide()"
+        >
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button
+          class="absolute right-8 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:text-dusk-accentSuccess transition-colors"
+          onclick="nextSlide()"
+        >
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="service" class="py-20 bg-dusk-surface parallax-container">
+      <!-- Parallax Gaming Elements -->
+      <div class="parallax-element gaming-particle" style="top: 10%; left: 10%; animation-delay: 0s;"></div>
+      <div class="parallax-element gaming-hexagon" style="top: 20%; right: 15%; animation-delay: 2s;"></div>
+      <img src="img/icons/cog.png" alt="" class="parallax-element parallax-icon" style="top: 60%; left: 5%; animation-delay: 1s;" />
+      <div class="parallax-element gaming-gear" style="top: 80%; right: 10%; animation-delay: 3s;"></div>
+      <img src="img/icons/game.png" alt="" class="parallax-element parallax-icon" style="top: 40%; right: 8%; animation-delay: 4s;" />
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-4xl lg:text-5xl font-bold font-poppins mb-6 gradient-text-dusk neon-text"
+          >
+            Servicios
+          </h2>
+          <p class="text-xl text-dusk-textSecondary max-w-4xl mx-auto">
+            Principalmente ofrecemos desarrollo de Páginas web, tanto estáticas
+            como dinámicas. También desarrollamos apps web, móviles y
+            videojuegos.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-12">
+          <!-- Left Column -->
+          <div class="space-y-8">
+            <!-- Web Development -->
+            <div
+              class="gaming-card rounded-3xl p-8 neon-glow"
+              data-aos="fade-right"
+            >
+              <div class="flex items-start space-x-6">
+                <div class="flex-shrink-0">
+                  <img
+                    src="img/icons/web.png"
+                    alt="Web Development"
+                    class="w-16 h-16 glow-animation icon-glow"
+                  />
                 </div>
-
-            </div>
-        </header>
-        <!--
-        End Fixed Navigation
-        ==================================== -->
-
-
-        <!--
-        Home Slider
-        ==================================== -->
-        <section id="home">     
-            <div id="home-carousel" class="carousel slide" data-interval="false">
-                <ol class="carousel-indicators">
-                    <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#home-carousel" data-slide-to="1"></li>
-                    <li data-target="#home-carousel" data-slide-to="2"></li>
-                </ol>
-                <!--/.carousel-indicators-->
-
-                <div class="carousel-inner">
-
-                    <div class="item active"  style="background-image: url('img/slider/logo5.png')" >
-                        <div class="carousel-caption">
-                            <div class="animated bounceInRight">
-                                <img src="img//icons/titulo3.png" class="logo-titulo" alt="titulo">
-                                <h2>DESARROLLO DE VIDEOJUEGOS</h2>
-                                <p><h3>Defendemos la idea de que no todo está inventado, por eso innovamos con el desarrollo de videojuegos tambien como herramientas para empresas.</h3></p>
-                            </div>
-                        </div>
-                    </div>              
-
-                    <div class="item" style="background-image: url('img/slider/mobile.png')">                
-                        <div class="carousel-caption">
-                            <div class="animated bounceInDown">
-                                <img src="img//icons/titulo2.png" class="logo-titulo" alt="titulo">
-                                <h2>APLICACIONES PARA DISPOSITIVOS MÓVILES</h2>
-                                <p><h3>Entendemos las necesidades del mundo actual y el celular es una herramienta esencial para todas las personas en casi todos los aspectos de su vida.</h3></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item" style="background-image: url('img/slider/fondo4.jpeg')">                 
-                         <div class="carousel-caption">
-                            <div class="animated bounceInUp">
-                                <img src="img//icons/titulo3c.png" class="logo-titulo" alt="titulo">
-                                <h2>WEB RESPONSIVE</h2>
-                                <p><h3>Nuestro objetivo principal es satisfacer la necesidad del usuario valorando al cliente como un integrante de nuestra familia Klanstar.</h3></p>
-                            </div>
-                        </div>
-                    </div>
+                <div>
+                  <h3
+                    class="text-2xl font-bold font-poppins mb-4 text-dusk-accentSuccess"
+                  >
+                    Páginas Web
+                  </h3>
+                  <ul class="space-y-2 text-dusk-textSecondary">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-dusk-accentSuccess mr-3"></i>
+                      Landing pages
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-dusk-accentSuccess mr-3"></i>
+                      Páginas web estáticas
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-dusk-accentSuccess mr-3"></i>
+                      Páginas web dinámicas funcionales
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-dusk-accentSuccess mr-3"></i>
+                      Portfolios profesionales
+                    </li>
+                  </ul>
                 </div>
-                <!--/.carousel-inner-->
-                <nav id="nav-arrows" class="nav-arrows hidden-xs hidden-sm visible-md visible-lg">
-                    <a class="sl-prev hidden-xs" href="#home-carousel" data-slide="prev">
-                        <i class="fa fa-angle-left fa-3x"></i>
-                    </a>
-                    <a class="sl-next" href="#home-carousel" data-slide="next">
-                        <i class="fa fa-angle-right fa-3x"></i>
-                    </a>
-                </nav>
-
+              </div>
             </div>
-        </section>
-        <!--
-        End #home Slider
-        ========================== -->
 
-        
-        <!--
-        #service
-        ========================== -->
-        <section id="service">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title text-center wow fadeInDown">
-                            <h2>Servicios</h2>    
-                            <p> <h3>Principalmente ofrecemos desarrollo de Paginas web, tanto estáticas como dinámicas, pero proyectamos ampliarnos para ofrecer apps web, apps para dispositivos móviles y videojuegos a medida para web y mobiles.</h3> </p>
-                        </div>
-                    </div>
+            <!-- Mobile Apps -->
+            <div
+              class="gaming-card rounded-3xl p-8 neon-glow"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
+              <div class="flex items-start space-x-6">
+                <div class="flex-shrink-0">
+                  <img
+                    src="img/icons/app1.png"
+                    alt="Mobile Apps"
+                    class="w-16 h-16 glow-animation icon-glow-primary"
+                  />
                 </div>
-                <div class="row">
-
-                    <div class="col-md-6 col-sm-12 wow fadeInLeft">
-                        <div class="media">
-                            <a href="#" class="pull-left">
-                                <img src="img/icons/web.png" class="media-object" alt="Monitor">
-                            </a>
-                            <div class="media-body">
-                                <h3>Páginas Web</h3>
-                                <li>Landing pages</li>
-                                <li>Paginas web estaticas</li>
-                                <li>Páginas web dinámicas funcionales</li>
-                                <li>Portfolios profesiones</li>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <a href="#" class="pull-left">
-                                <img src="img/icons/app1.png" class="media-object" alt="Cog">
-                            </a>
-                            <div class="media-body">
-                                <h3>Apps mobiles</h3>
-                                <p>Desarrollo de aplicaciones para celulares según la necesidad del sistema a organizar o problema a resolver.</p>
-                            </div>
-                        </div>   
-                    </div>
-
-                    <div class="col-md-6 col-sm-12 wow fadeInLeft">
-                        
-                    </div>
-
-                    <div class="col-md-6 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="media">
-                            <a href="#" class="pull-left">
-                                <img src="img/icons/app2.png" class="media-object" alt="Ruler">
-                            </a>
-                            <div class="media-body">
-                                <h3>Apps web</h3>
-                                <p>Desarrollo de aplicaciones web para pequeños o medianos negocios y desarrollo de e-commers a medida del cliente.</p>
-                            </div>
-                        </div>
-
-                        <div class="media">
-                            <a href="#" class="pull-left">
-                                <img src="img/icons/game.png" class="media-object" alt="Games">
-                            </a>
-                            <div class="media-body">
-                                <h3>Videojuegos</h3>
-                                <p>Videojuegos para empresas, según requerimientos del cliente y desarrollos propios.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div> <!-- end .row -->
-            </div> <!-- end .container -->
-        </section>
-        <!--
-        End #service
-        ========================== -->
-
-        <!--
-        #service-bottom
-        
-        
-        <section id="service-bottom">
-            <div class="container">
-                    <div class="mobile-device">
-                        <img data-wow-delay="0.2s" class="img-responsive black img-r wow fadeInLeftBig" src="img/icons/responsive.png" alt="iPhone Black">
-                        <img data-wow-delay="0.5s" class="img-responsive white img-r wow fadeInLeftBig" src="img/icons/responsive2.png" alt="iPhone White">
-                    </div>
-
-                    <div class="service-features wow fadeInRight">
-                        <h3>NUESTROS DISEÑOS VIENEN CON...</h3>
-                        <ul>
-                            <li>Código limpio</li>
-                            <li>Diseños responsive</li>
-                            <li>Compatiblidad con navegadores</li>
-                            <li>Interfaces intuitivas</li>
-                        </ul>
-                    </div>
+                <div>
+                  <h3
+                    class="text-2xl font-bold font-poppins mb-4 text-dusk-accentPrimary"
+                  >
+                    Apps móviles
+                  </h3>
+                  <ul class="space-y-2 text-dusk-textSecondary">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-dusk-accentSuccess mr-3"></i>
+                      Aplicaciones personalizadas para celulares
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-        </section>
-        
-        End #service-bottom
-        ========================== -->
+          </div>
 
-
-        <!--
-        #Portfolio
-        ========================== -->
-        
-        <section id="portfolio">
-
-            <div class="section-title text-center wow fadeInDown">
-                <h2>VISION</h2>    
-                <p>Nuestro compromiso y el sentido de lealtad hacia nuestros clientes es el motor que nos mantienen enfocados y entusiasmados a seguir dando lo mejor de nosotros para continuar mejorando.</p>
+          <!-- Right Column -->
+          <div class="space-y-8">
+            <!-- Web Apps -->
+            <div
+              class="gaming-card rounded-3xl p-8 neon-glow"
+              data-aos="fade-left"
+            >
+              <div class="flex items-start space-x-6">
+                <div class="flex-shrink-0">
+                  <img
+                    src="img/icons/app2.png"
+                    alt="Web Apps"
+                    class="w-16 h-16 glow-animation icon-glow-cyan"
+                  />
+                </div>
+                <div>
+                  <h3
+                    class="text-2xl font-bold font-poppins mb-4 text-gamer-teal"
+                  >
+                    Apps web
+                  </h3>
+                  <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-gamer-green mr-3"></i>
+                      Aplicaciones web para negocios
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-gamer-green mr-3"></i>
+                      E-commerce personalizados
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
+
+            <!-- Games -->
+            <div
+              class="gaming-card rounded-3xl p-8 neon-glow"
+              data-aos="fade-left"
+              data-aos-delay="200"
+            >
+              <div class="flex items-start space-x-6">
+                <div class="flex-shrink-0">
+                  <img
+                    src="img/icons/game.png"
+                    alt="Games"
+                    class="w-16 h-16 glow-animation icon-glow-pink"
+                  />
+                </div>
+                <div>
+                  <h3
+                    class="text-2xl font-bold font-poppins mb-4 text-gamer-pink"
+                  >
+                    Videojuegos
+                  </h3>
+                  <ul class="space-y-2 text-gray-300">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-gamer-green mr-3"></i>
+                      Videojuegos para empresas
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-gamer-green mr-3"></i>
+                      Proyectos propios
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-20 gradient-gamer parallax-container">
+      <!-- Parallax Gaming Elements -->
+      <div class="parallax-element gaming-circuit" style="top: 5%; left: 8%; animation-delay: 1s;"></div>
+      <div class="parallax-element gaming-particle" style="top: 15%; right: 12%; animation-delay: 0s;"></div>
+      <img src="img/icons/app1.png" alt="" class="parallax-element parallax-icon" style="top: 70%; left: 3%; animation-delay: 2s;" />
+      <div class="parallax-element gaming-hexagon" style="top: 85%; right: 5%; animation-delay: 4s;"></div>
+      <img src="img/icons/web.png" alt="" class="parallax-element parallax-icon" style="top: 30%; right: 7%; animation-delay: 3s;" />
+      <div class="parallax-element gaming-gear" style="top: 50%; left: 2%; animation-delay: 5s;"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center text-white" data-aos="fade-up">
+          <h2
+            class="text-4xl lg:text-5xl font-bold font-poppins mb-6 neon-text"
+          >
+            VISION
+          </h2>
+          <p class="text-xl max-w-4xl mx-auto opacity-90 leading-relaxed">
+            Nuestro compromiso y el sentido de lealtad hacia nuestros clientes
+            es el motor que nos mantiene enfocados y entusiasmados a seguir
+            dando lo mejor.
+          </p>
+        </div>
+
+        <!-- Project Filters -->
+        <div class="mt-16" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button
+              class="gaming-card neon-border text-white px-6 py-3 rounded-full hover:bg-gamer-magenta hover:scale-105 transition-all duration-300 font-medium filter-btn active"
+              data-filter="all"
+            >
+              Todos
+            </button>
+            <button
+              class="bg-gray-800/50 backdrop-blur-md text-white px-6 py-3 rounded-full hover:bg-gamer-cyan hover:text-black hover:scale-105 transition-all duration-300 font-medium filter-btn"
+              data-filter="web"
+            >
+              Web
+            </button>
+            <button
+              class="bg-gray-800/50 backdrop-blur-md text-white px-6 py-3 rounded-full hover:bg-gamer-green hover:text-black hover:scale-105 transition-all duration-300 font-medium filter-btn"
+              data-filter="app"
+            >
+              App
+            </button>
+            <button
+              class="bg-gray-800/50 backdrop-blur-md text-white px-6 py-3 rounded-full hover:bg-gamer-teal hover:text-black hover:scale-105 transition-all duration-300 font-medium filter-btn"
+              data-filter="ecommerce"
+            >
+              E-commers
+            </button>
+            <button
+              class="bg-gray-800/50 backdrop-blur-md text-white px-6 py-3 rounded-full hover:bg-gamer-pink hover:text-black hover:scale-105 transition-all duration-300 font-medium filter-btn"
+              data-filter="games"
+            >
+              Games
+            </button>
+          </div>
+        </div>
+
+        <!-- Gaming Elements -->
+        <div class="grid md:grid-cols-3 gap-8 mt-16">
+          <div
+            class="gaming-card rounded-2xl p-6 text-center neon-glow"
+            data-aos="fade-up"
+          >
+            <i
+              class="fas fa-gamepad text-6xl text-gamer-magenta mb-4 glow-animation icon-glow-magenta"
+            ></i>
+            <h3 class="text-xl font-bold text-white mb-2">Level Up</h3>
+            <p class="text-gray-300">Siempre mejorando nuestras habilidades</p>
+          </div>
+          <div
+            class="gaming-card rounded-2xl p-6 text-center neon-glow"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <i
+              class="fas fa-trophy text-6xl text-gamer-cyan mb-4 glow-animation icon-glow-cyan"
+            ></i>
+            <h3 class="text-xl font-bold text-white mb-2">Achievement</h3>
+            <p class="text-gray-300">Objetivos alcanzados con éxito</p>
+          </div>
+          <div
+            class="gaming-card rounded-2xl p-6 text-center neon-glow"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <i
+              class="fas fa-rocket text-6xl text-gamer-green mb-4 glow-animation icon-glow-green"
+            ></i>
+            <h3 class="text-xl font-bold text-white mb-2">Power Up</h3>
+            <p class="text-gray-300">Potenciamos tu presencia digital</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800 parallax-container">
+      <!-- Parallax Gaming Elements -->
+      <div class="parallax-element gaming-particle" style="top: 12%; right: 8%; animation-delay: 2s;"></div>
+      <img src="img/icons/monitor.png" alt="" class="parallax-element parallax-icon" style="top: 25%; left: 6%; animation-delay: 1s;" />
+      <div class="parallax-element gaming-circuit" style="top: 65%; right: 4%; animation-delay: 3s;"></div>
+      <img src="img/icons/app2.png" alt="" class="parallax-element parallax-icon" style="top: 80%; left: 8%; animation-delay: 4s;" />
+      <div class="parallax-element gaming-hexagon" style="top: 45%; left: 3%; animation-delay: 0s;"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-4xl lg:text-5xl font-bold font-poppins mb-6 gradient-text-gamer neon-text"
+          >
+            Acerca de nosotros
+          </h2>
+          <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+            Esta StartUp es una historia de lucha y superación de un personaje
+            que decidió nunca rendirse y enfocarse en lograr su sueño por él y
+            su familia.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+          <!-- Testimonials -->
+          <div data-aos="fade-right">
+            <h3 class="text-3xl font-bold font-poppins mb-8 text-gamer-cyan">
+              Testimonios
+            </h3>
+            <p class="text-gray-300 mb-8">
+              Clientes y usuarios confirman el empuje y la pasión con la que
+              demostramos nuestros resultados.
+            </p>
+
+            <div class="space-y-6">
+              <div class="gaming-card p-6 rounded-2xl neon-glow">
+                <div class="flex items-center mb-4">
+                  <img
+                    src="img/client/1.jpg"
+                    alt="Cliente"
+                    class="w-12 h-12 rounded-full object-cover mr-4 border-2 border-gamer-magenta"
+                  />
+                  <div>
+                    <h4 class="font-semibold text-white">Jhon</h4>
+                    <p class="text-sm text-gamer-cyan">
+                      Salchi - No lo conoce nadie
+                    </p>
+                  </div>
+                </div>
+                <p class="text-gray-300 italic">"testimonio..."</p>
+              </div>
+
+              <div class="gaming-card p-6 rounded-2xl neon-glow">
+                <div class="flex items-center mb-4">
+                  <img
+                    src="img/client/2.jpg"
+                    alt="Cliente"
+                    class="w-12 h-12 rounded-full object-cover mr-4 border-2 border-gamer-green"
+                  />
+                  <div>
+                    <h4 class="font-semibold text-white">Raul</h4>
+                    <p class="text-sm text-gamer-green">
+                      Elquetela - Dueño de un famoso baúl
+                    </p>
+                  </div>
+                </div>
+                <p class="text-gray-300 italic">"testimonio..."</p>
+              </div>
+
+              <div class="gaming-card p-6 rounded-2xl neon-glow">
+                <div class="flex items-center mb-4">
+                  <img
+                    src="img/client/3.jpg"
+                    alt="Cliente"
+                    class="w-12 h-12 rounded-full object-cover mr-4 border-2 border-gamer-pink"
+                  />
+                  <div>
+                    <h4 class="font-semibold text-white">El Brian</h4>
+                    <p class="text-sm text-gamer-pink">PUNGA</p>
+                  </div>
+                </div>
+                <p class="text-gray-300 italic">"testimonio...."</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div data-aos="fade-left">
+            <h3 class="text-3xl font-bold font-poppins mb-8 text-gamer-magenta">
+              Nuestras Skills
+            </h3>
+            <p class="text-gray-300 mb-8">
+              Lenguajes, editores, softwares, librerías, framewares, en realidad
+              somos mucho más que eso; somos desarrolladores con alma de niños,
+              trabajando en hacer realidad ideas que solucionen problemas y
+              satisfagan deseos.
+            </p>
+
+            <div class="space-y-6">
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold text-white">HTML 5</span>
+                  <span class="text-gamer-cyan font-semibold">95%</span>
+                </div>
+                <div class="bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-gamer-magenta to-gamer-cyan h-3 rounded-full neon-glow"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold text-white">CSS 3</span>
+                  <span class="text-gamer-green font-semibold">93%</span>
+                </div>
+                <div class="bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-gamer-cyan to-gamer-green h-3 rounded-full neon-glow"
+                    style="width: 93%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold text-white">JavaScript</span>
+                  <span class="text-gamer-pink font-semibold">95%</span>
+                </div>
+                <div class="bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-gamer-green to-gamer-pink h-3 rounded-full neon-glow"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold text-white">mySQL</span>
+                  <span class="text-gamer-teal font-semibold">87%</span>
+                </div>
+                <div class="bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-gamer-pink to-gamer-teal h-3 rounded-full neon-glow"
+                    style="width: 87%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold text-white">Unity</span>
+                  <span class="text-gamer-magenta font-semibold">95%</span>
+                </div>
+                <div class="bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-gamer-teal to-gamer-magenta h-3 rounded-full neon-glow"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold text-white">C#</span>
+                  <span class="text-gamer-cyan font-semibold">90%</span>
+                </div>
+                <div class="bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-gamer-magenta to-gamer-cyan h-3 rounded-full neon-glow"
+                    style="width: 90%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold text-white">Node.js</span>
+                  <span class="text-gamer-green font-semibold">85%</span>
+                </div>
+                <div class="bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-gamer-cyan to-gamer-green h-3 rounded-full neon-glow"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-900 relative overflow-hidden parallax-container">
+      <!-- Background decorative elements -->
+      <div
+        class="absolute top-0 left-0 w-64 h-64 bg-gamer-magenta opacity-5 rounded-full filter blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-96 h-96 bg-gamer-cyan opacity-5 rounded-full filter blur-3xl"
+      ></div>
+      
+      <!-- Parallax Gaming Elements -->
+      <div class="parallax-element gaming-gear" style="top: 8%; left: 5%; animation-delay: 1s;"></div>
+      <div class="parallax-element gaming-particle" style="top: 20%; right: 6%; animation-delay: 0s;"></div>
+      <img src="img/icons/plus.png" alt="" class="parallax-element parallax-icon" style="top: 75%; left: 4%; animation-delay: 3s;" />
+      <div class="parallax-element gaming-circuit" style="top: 90%; right: 8%; animation-delay: 2s;"></div>
+      <img src="img/icons/camera.png" alt="" class="parallax-element parallax-icon" style="top: 35%; left: 2%; animation-delay: 4s;" />
+      <div class="parallax-element gaming-hexagon" style="top: 55%; right: 3%; animation-delay: 5s;"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-8" data-aos="fade-up">
+          <div class="inline-flex items-center justify-center mb-6">
+            <i
+              class="fas fa-gem text-3xl text-gamer-magenta mr-4 glow-animation icon-glow-magenta"
+            ></i>
+            <h2
+              class="text-4xl lg:text-5xl font-bold font-poppins gradient-text-gamer neon-text"
+            >
+              PRECIOS
+            </h2>
+            <i
+              class="fas fa-gem text-3xl text-gamer-cyan ml-4 glow-animation icon-glow-cyan"
+            ></i>
+          </div>
+          <p class="text-xl text-gray-300 max-w-4xl mx-auto mb-4">
+            Planes diseñados para cada nivel de necesidad, desde startups hasta
+            grandes empresas.
+          </p>
+          <div
+            class="w-32 h-1 bg-gradient-to-r from-gamer-magenta to-gamer-cyan mx-auto rounded-full"
+          ></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 lg:gap-12 mt-16">
+          <!-- Basic Plan -->
+          <div
+            class="gaming-card rounded-3xl p-8 text-center neon-glow hover:scale-105 transition-all duration-300 relative"
+            data-aos="fade-up"
+          >
+            <!-- Decorative corner -->
+            <div
+              class="absolute top-4 right-4 text-gamer-cyan opacity-70 icon-glow-cyan"
+            >
+              <i class="fas fa-code text-2xl"></i>
+            </div>
+
+            <div class="mb-8">
+              <i
+                class="fas fa-gamepad text-6xl text-gamer-cyan mb-4 glow-animation icon-glow-cyan"
+              ></i>
+              <h3 class="text-2xl font-bold text-white mb-4">Starter</h3>
+              <div class="text-4xl font-bold text-gamer-cyan mb-2">$500</div>
+              <p class="text-gray-400">Por proyecto</p>
+            </div>
+            <ul class="text-left space-y-3 mb-8">
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Landing Page
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Diseño Responsive
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Optimización SEO
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Soporte 30 días
+              </li>
+            </ul>
+            <button
+              class="w-full bg-gradient-to-r from-gamer-cyan to-gamer-green text-black px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg"
+            >
+              <i class="fas fa-play mr-2"></i>ELEGIR PLAN
+            </button>
+          </div>
+
+          <!-- Pro Plan -->
+          <div
+            class="gaming-card rounded-3xl p-8 text-center neon-border-pink relative hover:scale-105 transition-all duration-300 mt-8 pricing-card-popular"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <!-- Badge Superior -->
+            <div
+              class="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10"
+            >
+              <div
+                class="bg-gradient-to-r from-gamer-magenta to-gamer-pink text-white px-8 py-3 rounded-full text-sm font-bold shadow-2xl neon-glow border-2 border-white"
+              >
+                <i class="fas fa-crown mr-2"></i>MÁS POPULAR
+              </div>
+            </div>
+            <!-- Decorative Elements -->
+            <div
+              class="absolute -top-2 -left-2 w-8 h-8 bg-gamer-cyan rounded-full opacity-60 animate-ping shadow-lg shadow-gamer-cyan/50"
+            ></div>
+            <div
+              class="absolute -top-2 -right-2 w-8 h-8 bg-gamer-green rounded-full opacity-60 animate-ping shadow-lg shadow-gamer-green/50"
+              style="animation-delay: 0.5s"
+            ></div>
+
+            <div class="mb-8 mt-8">
+              <i
+                class="fas fa-trophy text-6xl text-gamer-magenta mb-4 glow-animation icon-glow-magenta"
+              ></i>
+              <h3 class="text-2xl font-bold text-white mb-4">Professional</h3>
+              <div class="text-4xl font-bold text-gamer-magenta mb-2">
+                $1200
+              </div>
+              <p class="text-gray-400">Por proyecto</p>
+            </div>
+            <ul class="text-left space-y-3 mb-8">
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >App Web Completa
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Base de Datos
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Panel de Administración
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Soporte 90 días
+              </li>
+            </ul>
+            <button
+              class="w-full bg-gradient-to-r from-gamer-magenta to-gamer-pink text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg"
+            >
+              <i class="fas fa-star mr-2"></i>ELEGIR PLAN
+            </button>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div
+            class="gaming-card rounded-3xl p-8 text-center neon-glow hover:scale-105 transition-all duration-300 relative"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <!-- Premium Badge -->
+            <div
+              class="absolute top-4 left-4 bg-gradient-to-r from-gamer-green to-gamer-teal text-black px-3 py-1 rounded-full text-xs font-bold"
+            >
+              PREMIUM
+            </div>
+            <!-- Decorative corner -->
+            <div
+              class="absolute top-4 right-4 text-gamer-green opacity-70 icon-glow-green"
+            >
+              <i class="fas fa-infinity text-2xl"></i>
+            </div>
+
+            <div class="mb-8">
+              <i
+                class="fas fa-rocket text-6xl text-gamer-green mb-4 glow-animation icon-glow-green"
+              ></i>
+              <h3 class="text-2xl font-bold text-white mb-4">Enterprise</h3>
+              <div class="text-4xl font-bold text-gamer-green mb-2">Custom</div>
+              <p class="text-gray-400">Cotización personalizada</p>
+            </div>
+            <ul class="text-left space-y-3 mb-8">
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Videojuego Completo
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >App Móvil
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Multiplataforma
+              </li>
+              <li class="flex items-center text-white">
+                <i
+                  class="fas fa-check text-dusk-accentSuccess mr-3 icon-glow"
+                ></i
+                >Soporte Ilimitado
+              </li>
+            </ul>
+            <button
+              class="w-full bg-gradient-to-r from-gamer-green to-gamer-teal text-black px-6 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg"
+            >
+              <i class="fas fa-comments mr-2"></i>CONTACTAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800 parallax-container">
+      <!-- Parallax Gaming Elements -->
+      <div class="parallax-element gaming-particle" style="top: 10%; left: 7%; animation-delay: 2s;"></div>
+      <img src="img/icons/search.png" alt="" class="parallax-element parallax-icon" style="top: 30%; right: 5%; animation-delay: 0s;" />
+      <div class="parallax-element gaming-gear" style="top: 70%; left: 3%; animation-delay: 4s;"></div>
+      <div class="parallax-element gaming-circuit" style="top: 85%; right: 7%; animation-delay: 1s;"></div>
+      <img src="img/icons/responsive.png" alt="" class="parallax-element parallax-icon" style="top: 50%; right: 2%; animation-delay: 3s; width: 50px; height: 50px;" />
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-4xl lg:text-5xl font-bold font-poppins mb-6 gradient-text-gamer neon-text"
+          >
+            CONTACTANOS
+          </h2>
+          <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+            Si tienes interés en adquirir nuestros servicios, completa el
+            formulario y te contactaremos.
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <div
+            class="gaming-card rounded-3xl p-8 lg:p-12 neon-glow"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <form class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-sm font-semibold text-gamer-cyan mb-2"
+                    >Nombre</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full px-4 py-3 bg-gray-700 border border-gamer-cyan rounded-xl focus:ring-2 focus:ring-gamer-magenta focus:border-gamer-magenta transition-all duration-300 text-white placeholder-gray-400"
+                    placeholder="Ingresa tu nombre"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-semibold text-gamer-green mb-2"
+                    >E-mail</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 bg-gray-700 border border-gamer-green rounded-xl focus:ring-2 focus:ring-gamer-magenta focus:border-gamer-magenta transition-all duration-300 text-white placeholder-gray-400"
+                    placeholder="tu@email.com"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-semibold text-gamer-magenta mb-2"
+                  >Mensaje</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  required
+                  class="w-full px-4 py-3 bg-gray-700 border border-gamer-magenta rounded-xl focus:ring-2 focus:ring-gamer-cyan focus:border-gamer-cyan transition-all duration-300 resize-none text-white placeholder-gray-400"
+                  placeholder="Cuéntanos sobre tu proyecto..."
+                ></textarea>
+              </div>
+
+              <div class="text-center">
+                <button
+                  type="submit"
+                  class="bg-gradient-to-r from-gamer-magenta to-gamer-cyan text-white px-8 py-4 rounded-full font-semibold neon-glow hover:scale-105 transform transition-all duration-300"
+                >
+                  <i class="fas fa-paper-plane mr-2"></i>
+                  ENVIAR MENSAJE
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16 border-t border-gamer-cyan parallax-container">
+      <!-- Footer Parallax Elements -->
+      <div class="parallax-element gaming-particle" style="top: 20%; left: 10%; animation-delay: 1s;"></div>
+      <div class="parallax-element gaming-gear" style="top: 60%; right: 8%; animation-delay: 3s;"></div>
+      <img src="img/icons/ruler.png" alt="" class="parallax-element parallax-icon" style="top: 40%; left: 5%; animation-delay: 2s;" />
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <div class="mb-8" data-aos="fade-up">
+            <img
+              src="img/icons/lugo.png"
+              alt="Klanstart"
+              class="h-12 w-auto mx-auto mb-4 glow-animation icon-glow"
+            />
+            <h3
+              class="text-2xl font-bold font-poppins gradient-text-gamer neon-text"
+            >
+              KLANSTART
+            </h3>
+          </div>
+
+          <div class="mb-8" data-aos="fade-up" data-aos-delay="100">
+            <h4 class="text-xl font-semibold mb-4 text-gamer-cyan">
+              Nuestras Redes Sociales
+            </h4>
+            <div class="flex justify-center space-x-6">
+              <a
+                href="https://goo.gl/RqhEjP"
+                class="gaming-card w-12 h-12 rounded-full flex items-center justify-center hover:bg-gamer-cyan hover:text-black transition-all duration-300 neon-glow"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://goo.gl/hUfpSB"
+                class="gaming-card w-12 h-12 rounded-full flex items-center justify-center hover:bg-gamer-green hover:text-black transition-all duration-300 neon-glow"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="https://goo.gl/r4xzR4"
+                class="gaming-card w-12 h-12 rounded-full flex items-center justify-center hover:bg-gamer-magenta hover:text-white transition-all duration-300 neon-glow"
+              >
+                <i class="fab fa-google-plus-g"></i>
+              </a>
+              <a
+                href="https://goo.gl/k9zAy5"
+                class="gaming-card w-12 h-12 rounded-full flex items-center justify-center hover:bg-gamer-pink hover:text-white transition-all duration-300 neon-glow"
+              >
+                <i class="fab fa-dribbble"></i>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="border-t border-gamer-magenta pt-8"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <p class="text-gray-300 text-lg">
+              Nunca dejes de
+              <span class="text-gamer-green font-semibold neon-text"
+                >jugar</span
+              >
+              porque la vida no es un PREMIO al final,
+              <span class="text-gamer-cyan font-semibold neon-text"
+                >la vida son los TESOROS del camino.</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 bg-gradient-to-r from-gamer-magenta to-gamer-cyan text-white w-12 h-12 rounded-full neon-glow hover:scale-110 transition-all duration-300 opacity-0 invisible"
+    >
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+
+      // Carousel functionality
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".carousel-slide");
+      const indicators = document.querySelectorAll(".carousel-indicator");
+      const totalSlides = slides.length;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.style.opacity = i === index ? "1" : "0";
+        });
+
+        indicators.forEach((indicator, i) => {
+          if (i === index) {
+            indicator.classList.add("bg-gamer-magenta");
+            indicator.classList.remove("bg-white");
+          } else {
+            indicator.classList.add("bg-white");
+            indicator.classList.remove("bg-gamer-magenta");
+          }
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+      }
+
+      function previousSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(currentSlide);
+      }
+
+      function changeSlide(index) {
+        currentSlide = index;
+        showSlide(currentSlide);
+      }
+
+      // Auto-advance carousel
+      setInterval(nextSlide, 5000);
+
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+      }
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        const backToTop = document.getElementById("back-to-top");
+
+        if (window.scrollY > 50) {
+          navbar.classList.add("navbar-scrolled");
+          backToTop.classList.remove("opacity-0", "invisible");
+        } else {
+          navbar.classList.remove("navbar-scrolled");
+          backToTop.classList.add("opacity-0", "invisible");
+        }
+      });
+
+      // Back to top functionality
+      document
+        .getElementById("back-to-top")
+        .addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+          // Close mobile menu if open
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Filter functionality
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          // Remove active classes from all buttons
+          document.querySelectorAll(".filter-btn").forEach((b) => {
+            b.classList.remove("neon-border", "bg-gamer-magenta");
+            b.classList.add("bg-gray-800/50");
+          });
+          // Add active class to clicked button
+          this.classList.remove("bg-gray-800/50");
+          this.classList.add("neon-border", "bg-gamer-magenta");
+        });
+      });
+
+      // Form submission
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        // Gaming-style alert
+        const button = this.querySelector('button[type="submit"]');
+        const originalText = button.innerHTML;
+
+        button.innerHTML =
+          '<i class="fas fa-spinner fa-spin mr-2"></i>ENVIANDO...';
+        button.disabled = true;
+
+        setTimeout(() => {
+          button.innerHTML =
+            '<i class="fas fa-check mr-2"></i>¡MISIÓN COMPLETADA!';
+          button.classList.add("bg-gamer-green");
+
+          setTimeout(() => {
+            alert(
+              "🎮 ¡LEVEL UP! Tu mensaje ha sido enviado. Nos pondremos en contacto contigo pronto."
+            );
+            button.innerHTML = originalText;
+            button.disabled = false;
+            button.classList.remove("bg-gamer-green");
+            this.reset();
+          }, 2000);
+        }, 1500);
+      });
+
+      // Parallax effect
+      function initParallax() {
+        const parallaxElements = document.querySelectorAll(".parallax-element");
+        
+        function updateParallax() {
+          const scrollTop = window.pageYOffset;
+          const windowHeight = window.innerHeight;
+          
+          parallaxElements.forEach((element, index) => {
+            const rect = element.getBoundingClientRect();
+            const elementTop = rect.top + scrollTop;
+            const elementHeight = rect.height;
             
-            <nav class="project-filter clearfix text-center wow fadeInLeft"  data-wow-delay="0.5s">
-                <ul class="list-inline">
-                    <li><a href="javascript:;" class="filter" data-filter="all">Todos</a></li>
-                    <li><a href="javascript:;" class="filter" data-filter=".app">Web</a></li>
-                    <li><a href="javascript:;" class="filter" data-filter=".photography">App</a></li>
-                    <li><a href="javascript:;" class="filter" data-filter=".web">E-commers</a></li>
-                    <li><a href="javascript:;" class="filter" data-filter=".print">Games</a></li>
-                </ul>
-            </nav>
-            <!--
-            <div id="projects" class="clearfix">
-
-                <figure class="mix portfolio-item app">
-                    <img class="img-responsive" src="img/portfolio/portfolio-1.jpg" alt="Portfolio Item">
-                    <a href="img/portfolio/portfolio-1.jpg" title="Title One" rel="portfolio" class="fancybox"><span class="plus"></span></a>
-                    <figcaption class="mask">
-                        <h3>Awesome Image</h3>
-                        <span>Photography</span>
-                    </figcaption>
-                </figure>
-
-                <figure class="mix portfolio-item photography">
-                    <img class="img-responsive" src="img/portfolio/portfolio-2.jpg" alt="Portfolio Item">
-                    <a href="img/portfolio/portfolio-2.jpg" title="Title Two" rel="portfolio" class="fancybox"><span class="plus"></span></a>
-                    <figcaption class="mask">
-                        <h3>Awesome Image</h3>
-                        <span>Photography</span>
-                    </figcaption>
-                </figure>
-
-                <figure class="mix portfolio-item web">
-                    <img class="img-responsive" src="img/portfolio/portfolio-3.jpg" alt="Portfolio Item">
-                    <a href="img/portfolio/portfolio-3.jpg" title="Title Three" rel="portfolio" class="fancybox"><span class="plus"></span></a>
-                    <figcaption class="mask">
-                        <h3>Awesome Image</h3>
-                        <span>Photography</span>
-                    </figcaption>
-                </figure>
-
-                <figure class="mix portfolio-item print">
-                    <img class="img-responsive" src="img/portfolio/portfolio-4.jpg" alt="Portfolio Item">
-                    <a href="img/portfolio/portfolio-4.jpg" title="Title Four" rel="portfolio" class="fancybox"><span class="plus"></span></a>
-                    <figcaption class="mask">
-                        <h3>Awesome Image</h3>
-                        <span>Photography</span>
-                    </figcaption>
-                </figure>
-
-                <figure class="mix portfolio-item app">
-                    <img class="img-responsive" src="img/portfolio/portfolio-4.jpg" alt="Portfolio Item">
-                    <a href="img/portfolio/portfolio-4.jpg" title="Title Five" rel="portfolio" class="fancybox"><span class="plus"></span></a>
-                    <figcaption class="mask">
-                        <h3>Awesome Image</h3>
-                        <span>Photography</span>
-                    </figcaption>
-                </figure>
-
-                <figure class="mix portfolio-item photography">
-                    <img class="img-responsive" src="img/portfolio/portfolio-1.jpg" alt="Portfolio Item">
-                    <a href="img/portfolio/portfolio-1.jpg" title="Title Six" rel="portfolio" class="fancybox"><span class="plus"></span></a>
-                    <figcaption class="mask">
-                        <h3>Awesome Image</h3>
-                        <span>Photography</span>
-                    </figcaption>
-                </figure>
-
-                <figure class="mix portfolio-item web app">
-                    <img class="img-responsive" src="img/portfolio/portfolio-2.jpg" alt="Portfolio Item">
-                    <a href="img/portfolio/portfolio-2.jpg" title="Title Seven" rel="portfolio" class="fancybox"><span class="plus"></span></a>
-                    <figcaption class="mask">
-                        <h3>Awesome Image</h3>
-                        <span>Photography</span>
-                    </figcaption>
-                </figure>
-
-                <figure class="mix portfolio-item print web">
-                    <img class="img-responsive" src="img/portfolio/portfolio-3.jpg" alt="Portfolio Item">
-                    <a href="img/portfolio/portfolio-3.jpg" title="Title Eight" rel="portfolio" class="fancybox"><span class="plus"></span></a>
-                    <figcaption class="mask">
-                        <h3>Awesome Image</h3>
-                        <span>Photography</span>
-                    </figcaption>
-                </figure>
-
-            </div>
-
-        </section>
+            // Check if element is in viewport
+            if (elementTop < scrollTop + windowHeight && elementTop + elementHeight > scrollTop) {
+              // Calculate parallax speed based on element type
+              let speed = 0.5;
+              if (element.classList.contains('gaming-particle')) speed = 0.3;
+              else if (element.classList.contains('gaming-hexagon')) speed = 0.4;
+              else if (element.classList.contains('gaming-circuit')) speed = 0.6;
+              else if (element.classList.contains('gaming-gear')) speed = 0.7;
+              else if (element.classList.contains('parallax-icon')) speed = 0.2;
+              
+              // Add some variation based on position
+              const variation = (index % 3) * 0.1;
+              speed += variation;
+              
+              const yPos = -(scrollTop - elementTop) * speed;
+              element.style.transform = `translateY(${yPos}px)`;
+            }
+          });
+        }
         
-        End #Portfolio
-        ========================== ========================== -->
-
-        <!--
-        #about
-        ========================== -->
-        <section id="about">
-            <div class="container">
-                <div class="row">
-
-                    <div class="section-title text-center wow fadeInUp">
-                        <h2>Acerca de nosotros</h2>    
-                        <p>Esta StartUp es una historia de lucha y superacion de un personaje que decidió nunca rendirse ante las bajas probabilidades de éxito y solo se enfocó en lograr su sueño, por él y por su familia.</p>
-                    </div>
-                    <!--
-                    <div class="about-us text-center wow fadeInDown">
-                        <img src="img/about.png" alt="About Us" class="img-responsive">
-                    </div>========================== -->
-                </div>
-            </div>
-        </section>
-        <!--
-        End #about
-        ========================== -->
+        // Throttle scroll events for better performance
+        let ticking = false;
+        function requestTick() {
+          if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+            setTimeout(() => { ticking = false; }, 10);
+          }
+        }
         
-
-        <!--
-        #count
-        ========================== -->
-        <!--
-        <section id="count">
-            <div class="container">
-                <div class="row">
-                    <div class="counter-section clearfix">
-
-                        <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.5s">
-                            <div class="fact-item text-center">
-                                <div class="fact-icon">
-                                    <i class="fa fa-check-square fa-lg"></i>
-                                </div>
-                                <span data-to="120">0</span>
-                                <p>Completed Projects</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.8s">
-                            <div class="fact-item text-center">
-                                <div class="fact-icon">
-                                    <i class="fa fa-users fa-lg"></i>                                    
-                                </div>
-                                <span data-to="152">0</span>
-                                <p>Satisfied Clients</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="1.1s">
-                            <div class="fact-item text-center last">
-                                <div class="fact-icon">
-                                    <i class="fa fa-clock-o fa-lg"></i>
-                                </div>
-                                <span data-to="2500">0</span>
-                                <p>Working Hours</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="1.3s">
-                            <div class="fact-item text-center last">
-                                <div class="fact-icon">
-                                    <i class="fa fa-trophy fa-lg"></i>
-                                </div>
-                                <span data-to="150">0</span>
-                                <p>Award Won</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section> ========================== -->
-        <!--
-        End #count
-        ========================== -->
-
-        <!--
-        #about-us
-        ========================== -->
-        <section id="about-us">
-            <div class="container">
-                <div class="row">
-                    
-                    <div class="col-md-5 col-md-offset-1 wow fadeInLeft">
-
-                        <div class="subtitle text-center">
-                            <h3>Testimonios</h3>
-                            <p>Clientes y Usuarios confiman el empuje y la pasion con la que demostramos nuestros resultados.</p>
-                        </div>
-
-                        <div id="testimonial">
-
-                            <div class="tst-item clearfix">
-                                <div class="tst-single clearfix">
-                                    <img src="img/client/1.jpg" alt="Client" class="img-circle">
-                                    <div class="tst-content">
-                                        <p>testimonio...</p>
-                                        <span>Jhon, Salchi - No lo conoce nadie</span>
-                                    </div>
-                                </div>
-
-                                <div class="tst-single clearfix">
-                                    <img src="img/client/2.jpg" alt="Client" class="img-circle">
-                                    <div class="tst-content">
-                                        <p>testimonio...</p>
-                                        <span>Raul, Elquetela - Dueño de un famoso baúl</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="tst-item">
-                                <div class="tst-single clearfix">
-                                    <img src="img/client/3.jpg" alt="Client" class="img-circle">
-                                    <div class="tst-content">
-                                        <p>testimonio....</p>
-                                        <span>El Brian - PUNGA</span>
-                                    </div>
-                                </div>
-                                <div class="tst-single clearfix">
-                                    <img src="img/client/1.jpg" alt="Client" class="img-circle">
-                                    <div class="tst-content">
-                                        <p>testimonio....</p>
-                                        <span>el viejo</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="tst-item">
-                                <div class="tst-single clearfix">
-                                    <img src="img/client/2.jpg" alt="Client" class="img-circle">
-                                    <div class="tst-content">
-                                        <p>testimonio....</p>
-                                        <span>ya me conocen</span>
-                                    </div>
-                                </div>
-                                <div class="tst-single clearfix">
-                                    <img src="img/client/3.jpg" alt="Client" class="img-circle">
-                                    <div class="tst-content">
-                                        <p>testimonio....</p>
-                                        <span>otra vez el Brian</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div> <!-- end #testimonial -->
-                    </div> <!-- end .col-md-5 -->
-
-                    <div class="col-md-5 col-md-offset-1 wow fadeInRight">
-
-                        <div class="subtitle text-center">
-                            <h3>NUESTRAS SKILLS</h3>
-                            <p>Lenguajes, editores, softwares, librerias, framewares, en realidad somos mucho mas que eso; somos desarrolladores con alma de niños, trabajando en hacer realidad ideas que solucionen problemas y satisfagan deseos.</p>
-                        </div>
-
-                        <div class="progress-bars">
-                            
-                            <span>HTML 5 - <small>95%</small></span>
-                            <div class="progress"  data-progress="95">
-                                <div class="bar"></div>
-                            </div>
-                            <span>CSS 3 - <small>93%</small></span>
-                            <div class="progress"  data-progress="93">
-                                <div class="bar"></div>
-                            </div>
-                            <span>JavaScript - <small>95%</small></span>
-                            <div class="progress" data-progress="95">
-                                <div class="bar"></div>
-                            </div>
-                            <span>mySQL - <small>87%</small></span>
-                            <div class="progress"  data-progress="87">
-                                <div class="bar"></div>
-                            </div>
-                            <span>Unity - <small>95%</small></span>
-                            <div class="progress"  data-progress="95">
-                                <div class="bar"></div>
-                            </div>
-                            <span>C# - <small>90%</small></span>
-                            <div class="progress"  data-progress="90">
-                                <div class="bar"></div>
-                            </div>
-                            <span>Node.js - <small>85%</small></span>
-                            <div class="progress"  data-progress="85">
-                                <div class="bar"></div>
-                            </div>
-
-                        </div>  <!-- progress-bars -->
-
-                    </div>  <!-- end .col-md-5 -->
-
-                </div>
-            </div>
-        </section>
-        <!--
-        End #about-us
-        ========================== -->
-
-        <!--
-        #quotes
-       
-        <section id="quotes">
-            <div class="container">
-                <div class="row wow zoomIn">
-                    <div class="col-lg-12">
-                        <div class="call-to-action text-center">
-                            <p>“ACCUMSAN ID CURABITUR ET PORTITOR MAURIS BLANDIT DOLOR LOREM SOME EST OUR DONEC STIN LORTIOS”</p>
-                            <span>John Doe</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-       
-        End #quotes
-        ========================== -->
-
-        <!--
-        #pricing
+        window.addEventListener("scroll", requestTick);
+        updateParallax(); // Initial call
+      }
+      
+      // Add some gaming effects
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize parallax
+        initParallax();
         
-        <section id="pricing">
-            <div class="container">
-                <div class="row">
-
-                    <div class="section-title text-center wow fadeInUp">
-                        <h2>PRECIOS</h2>    
-                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp">
-                        <div class="pricing-table text-center">
-                            <div class="price">
-                                <span class="plan">Basic</span>
-                                <span class="value"><small>$</small><strong>19</strong>/MO</span>
-                            </div>
-                            <ul class="text-center">
-                                <li>Feature N0 1</li>
-                                <li>Feature N0 2</li>
-                                <li>Feature N0 3</li>
-                                <li>Feature N0 4</li>
-                            </ul>
-                            <a href="#" class="btn btn-price">Buy Now</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="pricing-table text-center">
-                            <div class="price">
-                                <span class="plan">Premium</span>
-                                <span class="value"><small>$</small><strong>29</strong>/MO</span>
-                            </div>
-                            <ul class="text-center">
-                                <li>Feature N0 1</li>
-                                <li>Feature N0 2</li>
-                                <li>Feature N0 3</li>
-                                <li>Feature N0 4</li>
-                            </ul>
-                            <a href="#" class="btn btn-price">Buy Now</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="pricing-table text-center">
-                            <div class="price">
-                                <span class="plan">Pro</span>
-                                <span class="value"><small>$</small><strong>39</strong>/MO</span>
-                            </div>
-                            <ul class="text-center">
-                                <li>Feature N0 1</li>
-                                <li>Feature N0 2</li>
-                                <li>Feature N0 3</li>
-                                <li>Feature N0 4</li>
-                            </ul>
-                            <a href="#" class="btn btn-price">Buy Now</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.9s">
-                        <div class="pricing-table text-center">
-                            <div class="price">
-                                <span class="plan">Platinum</span>
-                                <span class="value"><small>$</small><strong>49</strong>/MO</span>
-                            </div>
-                            <ul class="text-center">
-                                <li>Feature N0 1</li>
-                                <li>Feature N0 2</li>
-                                <li>Feature N0 3</li>
-                                <li>Feature N0 4</li>
-                            </ul>
-                            <a href="#" class="btn btn-price">Buy Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 wow fadeInUp">
-                        <div class="special-plan text-center">
-                            <p>Contact us if you have special request</p>
-                            <a href="#" class="btn btn-blue">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        // Add random glitch effect to neon text occasionally
+        setInterval(() => {
+          const neonTexts = document.querySelectorAll(".neon-text");
+          if (Math.random() < 0.1) {
+            // 10% chance
+            const randomText =
+              neonTexts[Math.floor(Math.random() * neonTexts.length)];
+            randomText.style.textShadow = "2px 0 #ff00ff, -2px 0 #00ffff";
+            setTimeout(() => {
+              randomText.style.textShadow = "";
+            }, 100);
+          }
+        }, 3000);
         
-        End #pricing
-        ========================== -->
-
-
-        <!--
-        #subscribe
-        
-        <section id="subscribe">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-md-7 wow fadeInLeft">
-                        <form action="#" method="post" class="subscription-form">
-                            <i class="fa fa-envelope-o fa-lg"></i>
-                            <input type="email" name="subscribe" class="subscribe" placeholder="YOUR MAIL" required="">
-                            <input type="submit" value="SUBSCRIBE" id="mail-submit">
-                        </form>
-                    </div>
-
-                    <div class="col-md-4 text-left wow fadeInRight">
-                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blan dit aliquet elit, eget tincidunt.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-       
-        End #subscribe
-        ========================== -->
-
-
-        <!--
-        #contact
-        ========================== -->
-        <section id="contact">
-            <div class="container">
-                <div class="row">
-
-                    <div class="section-title text-center wow fadeInDown">
-                        <h2>CONTACTANOS</h2>
-                        <p>Si tienes algun interes en ser parte de nuestra familia KLANSTART adquiriendo alguno de nuestros servicios de desarrollo por favor completa el formulario para que nos pongamos en contacto.</p>
-                    </div>
-                    
-                    <div class="col-md-8 col-sm-9 wow fadeInLeft">
-                        <div class="contact-form clearfix">
-                            <form action="index.html" method="post">
-                                <div class="input-field">
-                                    <input type="text" class="form-control" name="name" placeholder="Nombre" required="">
-                                </div>
-                                <div class="input-field">
-                                    <input type="email" class="form-control" name="email" placeholder="E-mail" required="">
-                                </div>
-                                <div class="input-field message">
-                                    <textarea name="message" class="form-control" placeholder="Mensaje" required=""></textarea>
-                                </div>
-                                <input type="submit" class="btn btn-blue pull-right" value="ENVIAR MENSAJE" id="msg-submit">
-                            </form>
-                        </div> <!-- end .contact-form -->
-                    </div> <!-- .col-md-8 -->
-                    <!--
-                    <div class="col-md-4 col-sm-3 wow fadeInRight">
-                        <div class="contact-details">
-                            <span>GET IN TOUCH</span>
-                            <p>+00 123.456.789 <br> <br> +00 123.456.789</p>
-                        </div>
-
-                        <div class="contact-details">
-                            <span>GET IN TOUCH</span>
-                            <p>+00 123.456.789 <br> <br> +00 123.456.789</p>
-                        </div> 
-                    </div> 
-                    ========================== -->
-                </div>
-            </div>
-        </section>
-        <!--
-        End #contact
-        ========================== -->
-
-        <!--
-        #footer
-        ========================== -->
-        <footer id="footer" class="text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-
-                        <div class="footer-logo wow fadeInDown">
-                            <img src="img/icons/lugo.png" alt="logo">
-                        </div>
-
-                        <div class="footer-social wow fadeInUp">
-                            <h3>Nuestras Redes Sociales</h3>
-                            <ul class="text-center list-inline">
-                                <li><a href="http://goo.gl/RqhEjP"><i class="fa fa-facebook fa-lg"></i></a></li>
-                                <li><a href="http://goo.gl/hUfpSB"><i class="fa fa-twitter fa-lg"></i></a></li>
-                                <li><a href="http://goo.gl/r4xzR4"><i class="fa fa-google-plus fa-lg"></i></a></li>
-                                <li><a href="http://goo.gl/k9zAy5"><i class="fa fa-dribbble fa-lg"></i></a></li>
-                            </ul>
-                        </div>
-
-                        <div class="copyright">
-                           
-                            <p>Nunca dejes de  <a href="http://graphberry.com">Jugar</a> porque la vida no es un PREMIO al final, <a target="_blank" href="http://www.themefisher.com"> la vida son los TESOROS del camino.</a></p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!--
-        End #footer
-        ========================== -->
-
-
-        <!--
-        JavaScripts
-        ========================== -->
-        
-        <!-- main jQuery -->
-        <script src="js/vendor/jquery-1.11.1.min.js"></script>
-        <!-- Bootstrap -->
-        <script src="js/bootstrap.min.js"></script>
-        <!-- jquery.nav -->
-        <script src="js/jquery.nav.js"></script>
-        <!-- Portfolio Filtering -->
-        <script src="js/jquery.mixitup.min.js"></script>
-        <!-- Fancybox -->
-        <script src="js/jquery.fancybox.pack.js"></script>
-        <!-- Parallax sections -->
-        <script src="js/jquery.parallax-1.1.3.js"></script>
-        <!-- jQuery Appear -->
-        <script src="js/jquery.appear.js"></script>
-        <!-- countTo -->
-        <script src="js/jquery-countTo.js"></script>
-        <!-- owl carousel -->
-        <script src="js/owl.carousel.min.js"></script>
-        <!-- WOW script -->
-        <script src="js/wow.min.js"></script>
-        <!-- theme custom scripts -->
-        <script src="js/main.js"></script>
-    </body>
+        // Add hover effects to parallax icons
+        const parallaxIcons = document.querySelectorAll(".parallax-icon");
+        parallaxIcons.forEach(icon => {
+          icon.addEventListener("mouseenter", function() {
+            this.style.filter = "drop-shadow(0 0 15px rgba(24, 242, 178, 0.8)) scale(1.1)";
+          });
+          icon.addEventListener("mouseleave", function() {
+            this.style.filter = "drop-shadow(0 0 10px rgba(24, 242, 178, 0.3))";
+          });
+        });
+      });
+    </script>
+  </body>
 </html>

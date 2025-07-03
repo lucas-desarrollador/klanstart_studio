@@ -1439,7 +1439,7 @@
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <form class="space-y-6">
+            <form id="contactForm" class="space-y-6">
               <div class="grid md:grid-cols-2 gap-6">
                 <div>
                   <label
@@ -1492,6 +1492,7 @@
               <div class="text-center">
                 <button
                   type="submit"
+                  id="submitBtn"
                   class="bg-gradient-to-r from-gamer-magenta to-gamer-cyan text-white px-8 py-4 rounded-full font-semibold neon-glow hover:scale-105 transform transition-all duration-300"
                 >
                   <i class="fas fa-paper-plane mr-2"></i>
@@ -1588,6 +1589,8 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
       // Initialize AOS
       AOS.init({
@@ -1694,32 +1697,79 @@
         });
       });
 
-      // Form submission
-      document.querySelector("form").addEventListener("submit", function (e) {
-        e.preventDefault();
-        // Gaming-style alert
-        const button = this.querySelector('button[type="submit"]');
-        const originalText = button.innerHTML;
+      // Inicializar EmailJS con tu Public Key
+      (function() {
+        emailjs.init("zVqqRmKTbBkuTQm-M"); // <-- Reemplaza por tu Public Key real
+        console.log("EmailJS inicializado para contacto@klanstart.com");
+      })();
 
-        button.innerHTML =
-          '<i class="fas fa-spinner fa-spin mr-2"></i>ENVIANDO...';
+      // Envío del formulario con los nombres de variables correctos
+      document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        
+        const button = document.getElementById("submitBtn");
+        const originalText = button.innerHTML;
+        const formData = new FormData(this);
+        
+        // Validación básica
+        const name = formData.get("name").trim();
+        const email = formData.get("email").trim();
+        const message = formData.get("message").trim();
+        
+        if (!name || !email || !message) {
+          alert("🎮 ¡UPS! Por favor completa todos los campos.");
+          return;
+        }
+        
+        // Validación de email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          alert("🎮 ¡ERROR! Por favor ingresa un email válido.");
+          return;
+        }
+
+        // Cambiar estado del botón
+        button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>ENVIANDO...';
         button.disabled = true;
 
-        setTimeout(() => {
-          button.innerHTML =
-            '<i class="fas fa-check mr-2"></i>¡MISIÓN COMPLETADA!';
-          button.classList.add("bg-gamer-green");
+        // Configurar parámetros para EmailJS con los nombres de la plantilla
+        const templateParams = {
+          nombre: name,      // Debe coincidir con {{nombre}} en la plantilla
+          mensaje: message,  // Debe coincidir con {{mensaje}} en la plantilla
+          email: email       // Debe coincidir con {{email}} en la plantilla
+        };
 
-          setTimeout(() => {
-            alert(
-              "🎮 ¡LEVEL UP! Tu mensaje ha sido enviado. Nos pondremos en contacto contigo pronto."
-            );
-            button.innerHTML = originalText;
-            button.disabled = false;
-            button.classList.remove("bg-gamer-green");
-            this.reset();
-          }, 2000);
-        }, 1500);
+        // Enviar email usando EmailJS
+        emailjs.send("service_o1bvq7", "template_20mk4mj", templateParams) // <-- Reemplaza TU_TEMPLATE_ID por el real
+          .then(function(response) {
+            console.log("SUCCESS!", response.status, response.text);
+            
+            // Éxito - Cambiar botón
+            button.innerHTML = '<i class="fas fa-check mr-2"></i>¡MISIÓN COMPLETADA!';
+            button.classList.add("bg-gamer-green");
+            
+            // Mostrar mensaje de éxito
+            setTimeout(() => {
+              alert("🎮 ¡LEVEL UP! Tu mensaje ha sido enviado exitosamente. Nos pondremos en contacto contigo pronto.");
+              button.innerHTML = originalText;
+              button.disabled = false;
+              button.classList.remove("bg-gamer-green");
+              document.getElementById("contactForm").reset();
+            }, 2000);
+          }, function(error) {
+            console.log("FAILED...", error);
+            
+            // Error - Restaurar botón
+            button.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i>ERROR - REINTENTAR';
+            button.classList.add("bg-red-500");
+            
+            setTimeout(() => {
+              alert("🎮 ¡GAME OVER! Hubo un error al enviar el mensaje. Por favor intenta nuevamente.");
+              button.innerHTML = originalText;
+              button.disabled = false;
+              button.classList.remove("bg-red-500");
+            }, 2000);
+          });
       });
 
       // Parallax effect

@@ -1,0 +1,92 @@
+<!-- Versión alternativa del formulario usando Formspree -->
+<!-- Esta es una opción más simple que no requiere configuración -->
+
+<form action="https://formspree.io/f/contacto@klanstart.com" method="POST" id="contactForm" class="space-y-6">
+  <div class="grid md:grid-cols-2 gap-6">
+    <div>
+      <label
+        for="name"
+        class="block text-sm font-semibold text-gamer-cyan mb-2"
+        >Nombre</label
+      >
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        class="w-full px-4 py-3 bg-gray-700 border border-gamer-cyan rounded-xl focus:ring-2 focus:ring-gamer-magenta focus:border-gamer-magenta transition-all duration-300 text-white placeholder-gray-400"
+        placeholder="Ingresa tu nombre"
+      />
+    </div>
+    <div>
+      <label
+        for="email"
+        class="block text-sm font-semibold text-gamer-green mb-2"
+        >E-mail</label
+      >
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="w-full px-4 py-3 bg-gray-700 border border-gamer-green rounded-xl focus:ring-2 focus:ring-gamer-magenta focus:border-gamer-magenta transition-all duration-300 text-white placeholder-gray-400"
+        placeholder="tu@email.com"
+      />
+    </div>
+  </div>
+
+  <div>
+    <label
+      for="message"
+      class="block text-sm font-semibold text-gamer-magenta mb-2"
+      >Mensaje</label
+    >
+    <textarea
+      id="message"
+      name="message"
+      rows="6"
+      required
+      class="w-full px-4 py-3 bg-gray-700 border border-gamer-magenta rounded-xl focus:ring-2 focus:ring-gamer-cyan focus:border-gamer-cyan transition-all duration-300 resize-none text-white placeholder-gray-400"
+      placeholder="Cuéntanos sobre tu proyecto..."
+    ></textarea>
+  </div>
+
+  <div class="text-center">
+    <button
+      type="submit"
+      id="submitBtn"
+      class="bg-gradient-to-r from-gamer-magenta to-gamer-cyan text-white px-8 py-4 rounded-full font-semibold neon-glow hover:scale-105 transform transition-all duration-300"
+    >
+      <i class="fas fa-paper-plane mr-2"></i>
+      ENVIAR MENSAJE
+    </button>
+  </div>
+</form>
+
+<script>
+// JavaScript para Formspree (más simple)
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  const button = document.getElementById("submitBtn");
+  const originalText = button.innerHTML;
+  
+  // Cambiar estado del botón
+  button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>ENVIANDO...';
+  button.disabled = true;
+  
+  // Formspree maneja el envío automáticamente
+  // Solo necesitamos mostrar feedback visual
+  
+  setTimeout(() => {
+    button.innerHTML = '<i class="fas fa-check mr-2"></i>¡MISIÓN COMPLETADA!';
+    button.classList.add("bg-gamer-green");
+    
+    setTimeout(() => {
+      alert("🎮 ¡LEVEL UP! Tu mensaje ha sido enviado. Nos pondremos en contacto contigo pronto.");
+      button.innerHTML = originalText;
+      button.disabled = false;
+      button.classList.remove("bg-gamer-green");
+      this.reset();
+    }, 2000);
+  }, 1500);
+});
+</script> 

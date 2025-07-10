@@ -10,6 +10,179 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* Colores de texto para gaming */
+.text-gamer-teal {
+  color: #00ffff !important;
+}
+.text-gamer-green {
+  color: #00ff7f !important;
+}
+.text-gamer-pink {
+  color: #ff1493 !important;
+}
+.text-gamer-magenta {
+  color: #ff00ff !important;
+}
+.text-gamer-cyan {
+  color: #00ffff !important;
+}
+
+/* Colores de texto para legibilidad */
+.text-gray-300 {
+  color: #d1d5db !important;
+}
+.text-dusk-textPrimary {
+  color: #ffffff !important;
+}
+.text-dusk-textSecondary {
+  color: #e5e7eb !important;
+}
+.text-dusk-accentSuccess {
+  color: #18f2b2 !important;
+}
+.text-dusk-accentPrimary {
+  color: #4b5cc4 !important;
+}
+
+/* Colores de acento para fondos */
+.from-dusk-accentPrimary {
+  --tw-gradient-from: #4b5cc4;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(75, 92, 196, 0));
+}
+.to-dusk-accentSuccess {
+  --tw-gradient-to: #18f2b2;
+}
+.from-dusk-accentSuccess {
+  --tw-gradient-from: #18f2b2;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(24, 242, 178, 0));
+}
+.to-dusk-accentAlert {
+  --tw-gradient-to: #ff6b5e;
+}
+.from-dusk-accentAlert {
+  --tw-gradient-from: #ff6b5e;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 107, 94, 0));
+}
+
+/* Colores de fondo para gamer */
+.bg-gamer-magenta {
+  background-color: #ff00ff !important;
+}
+.bg-gamer-cyan {
+  background-color: #00ffff !important;
+}
+.bg-gamer-green {
+  background-color: #00ff7f !important;
+}
+.bg-gamer-teal {
+  background-color: #00ffff !important;
+}
+.bg-gamer-pink {
+  background-color: #ff1493 !important;
+}
+
+/* Sombras para gamer */
+.shadow-gamer-cyan\/50 {
+  box-shadow: 0 10px 15px -3px rgba(0, 255, 255, 0.5), 0 4px 6px -2px rgba(0, 255, 255, 0.25) !important;
+}
+.shadow-gamer-green\/50 {
+  box-shadow: 0 10px 15px -3px rgba(0, 255, 127, 0.5), 0 4px 6px -2px rgba(0, 255, 127, 0.25) !important;
+}
+
+/* Gradientes para gamer */
+.from-gamer-magenta {
+  --tw-gradient-from: #ff00ff;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 0, 255, 0));
+}
+.to-gamer-cyan {
+  --tw-gradient-to: #00ffff;
+}
+.from-gamer-cyan {
+  --tw-gradient-from: #00ffff;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 255, 255, 0));
+}
+.to-gamer-green {
+  --tw-gradient-to: #00ff7f;
+}
+.from-gamer-green {
+  --tw-gradient-from: #00ff7f;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 255, 127, 0));
+}
+.to-gamer-pink {
+  --tw-gradient-to: #ff1493;
+}
+.from-gamer-pink {
+  --tw-gradient-from: #ff1493;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 20, 147, 0));
+}
+.to-gamer-teal {
+  --tw-gradient-to: #00ffff;
+}
+.from-gamer-teal {
+  --tw-gradient-from: #00ffff;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 255, 255, 0));
+}
+
+/* Bordes para gamer */
+.border-gamer-magenta {
+  border-color: #ff00ff !important;
+}
+.border-gamer-cyan {
+  border-color: #00ffff !important;
+}
+.border-gamer-green {
+  border-color: #00ff7f !important;
+}
+.border-gamer-pink {
+  border-color: #ff1493 !important;
+}
+.border-gamer-teal {
+  border-color: #00ffff !important;
+}
+
+/* Rings para gamer (focus) */
+.focus\:ring-gamer-magenta:focus {
+  --tw-ring-color: #ff00ff !important;
+}
+.focus\:ring-gamer-cyan:focus {
+  --tw-ring-color: #00ffff !important;
+}
+
+/* Placeholder */
+.placeholder-gray-400::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Backdrop blur */
+.backdrop-blur-lg {
+  backdrop-filter: blur(16px) !important;
+}
+.backdrop-blur-md {
+  backdrop-filter: blur(12px) !important;
+}
+
+/* Colores de fondo grises */
+.bg-gray-700 {
+  background-color: #374151 !important;
+}
+.bg-gray-800\/50 {
+  background-color: rgba(31, 41, 55, 0.5) !important;
+}
+
+/* Colores de texto adicionales */
+.text-black {
+  color: #000000 !important;
+}
+
+/* Fondo para secciones */
+.bg-dusk-surface {
+  background: linear-gradient(135deg, #1a1b22 0%, #2c2d36 100%) !important;
+}
+
+.bg-dusk-bg {
+  background: #0e0e11 !important;
+}
+
 /* Custom animations */
 @keyframes float {
   0%,

@@ -28,7 +28,46 @@
       rel="stylesheet"
     />
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/custom-styles.css" />
+    <link rel="stylesheet" href="css/custom-styles.css?v=1.1" />
+    
+    <!-- Estilos críticos como respaldo -->
+    <style>
+      /* Estilos críticos para evitar problemas de cache */
+      .text-gamer-teal { color: #00ffff !important; }
+      .text-gamer-green { color: #00ff7f !important; }
+      .text-gamer-pink { color: #ff1493 !important; }
+      .text-gamer-magenta { color: #ff00ff !important; }
+      .text-gamer-cyan { color: #00ffff !important; }
+      .text-gray-300 { color: #d1d5db !important; }
+      .text-dusk-textPrimary { color: #ffffff !important; }
+      .text-dusk-textSecondary { color: #e5e7eb !important; }
+      .text-dusk-accentSuccess { color: #18f2b2 !important; }
+      .text-dusk-accentPrimary { color: #4b5cc4 !important; }
+      .text-black { color: #000000 !important; }
+      
+      .bg-dusk-surface { background: linear-gradient(135deg, #1a1b22 0%, #2c2d36 100%) !important; }
+      .bg-dusk-bg { background: #0e0e11 !important; }
+      
+      .bg-gamer-magenta { background-color: #ff00ff !important; }
+      .bg-gamer-cyan { background-color: #00ffff !important; }
+      .bg-gamer-green { background-color: #00ff7f !important; }
+      .bg-gamer-teal { background-color: #00ffff !important; }
+      .bg-gamer-pink { background-color: #ff1493 !important; }
+      
+      .border-gamer-magenta { border-color: #ff00ff !important; }
+      .border-gamer-cyan { border-color: #00ffff !important; }
+      .border-gamer-green { border-color: #00ff7f !important; }
+      .border-gamer-pink { border-color: #ff1493 !important; }
+      .border-gamer-teal { border-color: #00ffff !important; }
+      
+      .bg-gray-700 { background-color: #374151 !important; }
+      .bg-gray-800\/50 { background-color: rgba(31, 41, 55, 0.5) !important; }
+      
+      .placeholder-gray-400::placeholder { color: #9ca3af !important; }
+      
+      .backdrop-blur-lg { backdrop-filter: blur(16px) !important; }
+      .backdrop-blur-md { backdrop-filter: blur(12px) !important; }
+    </style>
   </head>
 
   <body class="bg-dusk-bg text-dusk-textPrimary">
@@ -1463,5 +1502,42 @@
         });
       });
     </script>
+    
+    <!-- Verificación de CSS -->
+    <script>
+      // Verificar si el CSS se cargó correctamente
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          // Verificar si las clases críticas están aplicadas
+          const testElement = document.createElement('div');
+          testElement.className = 'text-gamer-cyan';
+          testElement.style.position = 'absolute';
+          testElement.style.left = '-9999px';
+          document.body.appendChild(testElement);
+          
+          const computedStyle = window.getComputedStyle(testElement);
+          const color = computedStyle.color;
+          
+          document.body.removeChild(testElement);
+          
+          // Si el color no es el esperado, mostrar alerta
+          if (color !== 'rgb(0, 255, 255)' && color !== '#00ffff') {
+            console.warn('CSS personalizado no se cargó correctamente. Verificando archivo...');
+            
+            // Intentar cargar el CSS nuevamente
+            const link = document.querySelector('link[href*="custom-styles.css"]');
+            if (link) {
+              const newLink = document.createElement('link');
+              newLink.rel = 'stylesheet';
+              newLink.href = link.href + '?v=' + Date.now();
+              document.head.appendChild(newLink);
+            }
+          }
+        }, 1000);
+      });
+    </script>
+    
+    <!-- Main Script -->
+    <script src="js/main.js"></script>
   </body>
 </html>

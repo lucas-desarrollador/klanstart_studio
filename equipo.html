@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Conoce al equipo de Klanstart - Expertos en desarrollo web, apps móviles y videojuegos"
+    />
+    <meta
+      name="keywords"
+      content="equipo klanstart, desarrolladores, programadores, startup"
+    />
+    <title>Equipo - KLANSTART</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS - Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/custom-styles.css?v=1.1" />
+    
+    <!-- Estilos críticos como respaldo -->
+    <style>
+      /* Estilos críticos para evitar problemas de cache */
+      .text-gamer-teal { color: #00ffff !important; }
+      .text-gamer-green { color: #00ff7f !important; }
+      .text-gamer-pink { color: #ff1493 !important; }
+      .text-gamer-magenta { color: #ff00ff !important; }
+      .text-gamer-cyan { color: #00ffff !important; }
+      .text-gray-300 { color: #d1d5db !important; }
+      .text-dusk-textPrimary { color: #ffffff !important; }
+      .text-dusk-textSecondary { color: #e5e7eb !important; }
+      .text-dusk-accentSuccess { color: #18f2b2 !important; }
+      .text-dusk-accentPrimary { color: #4b5cc4 !important; }
+      .text-black { color: #000000 !important; }
+      
+      .bg-dusk-surface { background: linear-gradient(135deg, #1a1b22 0%, #2c2d36 100%) !important; }
+      .bg-dusk-bg { background: #0e0e11 !important; }
+      
+      .bg-gamer-magenta { background-color: #ff00ff !important; }
+      .bg-gamer-cyan { background-color: #00ffff !important; }
+      .bg-gamer-green { background-color: #00ff7f !important; }
+      .bg-gamer-teal { background-color: #00ffff !important; }
+      .bg-gamer-pink { background-color: #ff1493 !important; }
+      
+      .border-gamer-magenta { border-color: #ff00ff !important; }
+      .border-gamer-cyan { border-color: #00ffff !important; }
+      .border-gamer-green { border-color: #00ff7f !important; }
+      .border-gamer-pink { border-color: #ff1493 !important; }
+      .border-gamer-teal { border-color: #00ffff !important; }
+      
+      .bg-gray-700 { background-color: #374151 !important; }
+      .bg-gray-800\/50 { background-color: rgba(31, 41, 55, 0.5) !important; }
+      
+      .placeholder-gray-400::placeholder { color: #9ca3af !important; }
+      
+      .backdrop-blur-lg { backdrop-filter: blur(16px) !important; }
+      .backdrop-blur-md { backdrop-filter: blur(12px) !important; }
+      
+      /* Estilos mejorados para elementos parallax */
+      .parallax-element { opacity: 0.8 !important; }
+      .parallax-icon { 
+        opacity: 0.6 !important; 
+        filter: drop-shadow(0 0 15px rgba(24, 242, 178, 0.4)) drop-shadow(0 0 25px rgba(24, 242, 178, 0.2)) !important;
+      }
+      .gaming-particle { 
+        background: rgba(24, 242, 178, 0.15) !important;
+        border: 1px solid rgba(24, 242, 178, 0.4) !important;
+        box-shadow: 0 0 15px rgba(24, 242, 178, 0.3), 0 0 30px rgba(24, 242, 178, 0.1) !important;
+      }
+      .gaming-hexagon { 
+        background: rgba(75, 92, 196, 0.15) !important;
+        border: 1px solid rgba(75, 92, 196, 0.4) !important;
+        box-shadow: 0 0 15px rgba(75, 92, 196, 0.3), 0 0 30px rgba(75, 92, 196, 0.1) !important;
+      }
+      .gaming-circuit { 
+        border: 1px solid rgba(255, 0, 255, 0.4) !important;
+        box-shadow: 0 0 15px rgba(255, 0, 255, 0.3), 0 0 30px rgba(255, 0, 255, 0.1) !important;
+      }
+      .gaming-gear { 
+        border: 3px solid rgba(0, 255, 255, 0.4) !important;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.3), 0 0 30px rgba(0, 255, 255, 0.1) !important;
+      }
+      
+      /* Fondo mejorado para sección VISION */
+      .gradient-gamer {
+        background: linear-gradient(135deg, #1a1b22 0%, #2c2d36 20%, rgba(255, 0, 255, 0.4) 40%, rgba(0, 255, 255, 0.4) 50%, rgba(0, 255, 127, 0.4) 60%, #2c2d36 80%, #1a1b22 100%) !important;
+        position: relative !important;
+      }
+    </style>
+  </head>
+
+  <body class="bg-dusk-bg text-dusk-textPrimary">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full backdrop-blur-lg z-50 navbar-modern transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center">
+            <a href="index.html">
+              <img
+                src="img/icons/lugo.png"
+                alt="Klanstart"
+                class="h-10 w-auto glow-animation icon-glow"
+              />
+              <span
+                class="ml-3 text-2xl font-bold font-poppins gradient-text-dusk neon-text"
+                >KLANSTART</span
+              >
+            </a>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="index.html"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Home</a
+            >
+            <a
+              href="index.html#service"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Servicios</a
+            >
+            <a
+              href="index.html#vision"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Vision</a
+            >
+            <a
+              href="index.html#about"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Acerca de nosotros</a
+            >
+            <a
+              href="equipo.html"
+              class="nav-link text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Equipo</a
+            >
+            <a
+              href="noticias.html"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Noticias</a
+            >
+            <a
+              href="index.html#pricing"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Precios</a
+            >
+            <a
+              href="index.html#contact"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Contacto</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button class="text-dusk-textPrimary" onclick="toggleMobileMenu()">
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-dusk-surface/95 border-t border-dusk-accentSuccess"
+      >
+        <div class="px-4 py-2 space-y-1">
+          <a
+            href="index.html"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Home</a
+          >
+          <a
+            href="index.html#service"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Servicios</a
+          >
+          <a
+            href="index.html#vision"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Vision</a
+          >
+          <a
+            href="index.html#about"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Acerca de nosotros</a
+          >
+          <a
+            href="equipo.html"
+            class="block px-3 py-2 text-dusk-accentSuccess transition-colors"
+            >Equipo</a
+          >
+          <a
+            href="noticias.html"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Noticias</a
+          >
+          <a
+            href="index.html#pricing"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Precios</a
+          >
+          <a
+            href="index.html#contact"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Contacto</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 relative overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="gaming-particle absolute top-20 left-10 w-4 h-4 rounded-full animate-pulse"></div>
+        <div class="gaming-hexagon absolute top-40 right-20 w-6 h-6 transform rotate-45 animate-pulse"></div>
+        <div class="gaming-circuit absolute bottom-20 left-1/4 w-8 h-8 border-2 rounded-full animate-spin"></div>
+        <div class="gaming-gear absolute bottom-40 right-1/3 w-5 h-5 rounded-full animate-pulse"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center" data-aos="fade-up">
+          <h1 class="text-5xl md:text-7xl font-bold font-poppins mb-6">
+            <span class="gradient-text-dusk">Nuestro</span>
+            <span class="text-dusk-accentSuccess"> Equipo</span>
+          </h1>
+          <p class="text-xl text-dusk-textSecondary max-w-3xl mx-auto mb-8">
+            Conoce a los expertos apasionados que hacen posible la innovación en desarrollo web, apps móviles y videojuegos
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Team Member 1 -->
+          <div class="bg-dusk-surface rounded-2xl p-8 border border-dusk-accentSuccess/20 hover:border-dusk-accentSuccess/40 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-center mb-6">
+              <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-dusk-accentSuccess/30">
+                <img 
+                  src="img/team/member1.jpg" 
+                  alt="CEO & Fundador"
+                  class="w-full h-full object-cover"
+                  onerror="this.src='img/icons/logo3.png'"
+                />
+              </div>
+              <h3 class="text-2xl font-bold text-dusk-accentSuccess mb-2">Lucas Góngora</h3>
+              <p class="text-dusk-accentPrimary font-semibold mb-3">CEO & Fundador</p>
+            </div>
+            <div class="text-center">
+              <p class="text-dusk-textSecondary mb-4">
+                Visionario y emprendedor con más de 8 años de experiencia en desarrollo de software. 
+                Especializado en arquitectura de sistemas y liderazgo de equipos tecnológicos.
+              </p>
+              <div class="flex justify-center space-x-4">
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-twitter text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="bg-dusk-surface rounded-2xl p-8 border border-dusk-accentSuccess/20 hover:border-dusk-accentSuccess/40 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-center mb-6">
+              <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-dusk-accentSuccess/30">
+                <img 
+                  src="img/team/member2.jpg" 
+                  alt="CTO & Lead Developer"
+                  class="w-full h-full object-cover"
+                  onerror="this.src='img/icons/logo3.png'"
+                />
+              </div>
+              <h3 class="text-2xl font-bold text-dusk-accentSuccess mb-2">María Rodríguez</h3>
+              <p class="text-dusk-accentPrimary font-semibold mb-3">CTO & Lead Developer</p>
+            </div>
+            <div class="text-center">
+              <p class="text-dusk-textSecondary mb-4">
+                Ingeniera de software con expertise en desarrollo full-stack y tecnologías emergentes. 
+                Lidera la innovación técnica y la implementación de mejores prácticas.
+              </p>
+              <div class="flex justify-center space-x-4">
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-twitter text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="bg-dusk-surface rounded-2xl p-8 border border-dusk-accentSuccess/20 hover:border-dusk-accentSuccess/40 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="300">
+            <div class="text-center mb-6">
+              <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-dusk-accentSuccess/30">
+                <img 
+                  src="img/team/member3.jpg" 
+                  alt="Game Developer"
+                  class="w-full h-full object-cover"
+                  onerror="this.src='img/icons/logo3.png'"
+                />
+              </div>
+              <h3 class="text-2xl font-bold text-dusk-accentSuccess mb-2">Carlos Vega</h3>
+              <p class="text-dusk-accentPrimary font-semibold mb-3">Game Developer</p>
+            </div>
+            <div class="text-center">
+              <p class="text-dusk-textSecondary mb-4">
+                Desarrollador de videojuegos apasionado con experiencia en Unity y Unreal Engine. 
+                Creador de experiencias inmersivas y narrativas interactivas.
+              </p>
+              <div class="flex justify-center space-x-4">
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-twitter text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 4 -->
+          <div class="bg-dusk-surface rounded-2xl p-8 border border-dusk-accentSuccess/20 hover:border-dusk-accentSuccess/40 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="400">
+            <div class="text-center mb-6">
+              <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-dusk-accentSuccess/30">
+                <img 
+                  src="img/team/member4.jpg" 
+                  alt="UI/UX Designer"
+                  class="w-full h-full object-cover"
+                  onerror="this.src='img/icons/logo3.png'"
+                />
+              </div>
+              <h3 class="text-2xl font-bold text-dusk-accentSuccess mb-2">Ana Martínez</h3>
+              <p class="text-dusk-accentPrimary font-semibold mb-3">UI/UX Designer</p>
+            </div>
+            <div class="text-center">
+              <p class="text-dusk-textSecondary mb-4">
+                Diseñadora creativa especializada en interfaces de usuario y experiencia de usuario. 
+                Transforma ideas complejas en diseños intuitivos y atractivos.
+              </p>
+              <div class="flex justify-center space-x-4">
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-dribbble text-xl"></i>
+                </a>
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-behance text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 5 -->
+          <div class="bg-dusk-surface rounded-2xl p-8 border border-dusk-accentSuccess/20 hover:border-dusk-accentSuccess/40 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="500">
+            <div class="text-center mb-6">
+              <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-dusk-accentSuccess/30">
+                <img 
+                  src="img/team/member5.jpg" 
+                  alt="Mobile Developer"
+                  class="w-full h-full object-cover"
+                  onerror="this.src='img/icons/logo3.png'"
+                />
+              </div>
+              <h3 class="text-2xl font-bold text-dusk-accentSuccess mb-2">Diego Silva</h3>
+              <p class="text-dusk-accentPrimary font-semibold mb-3">Mobile Developer</p>
+            </div>
+            <div class="text-center">
+              <p class="text-dusk-textSecondary mb-4">
+                Desarrollador móvil experto en React Native y Flutter. 
+                Creador de aplicaciones nativas y multiplataforma con enfoque en rendimiento.
+              </p>
+              <div class="flex justify-center space-x-4">
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-twitter text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 6 -->
+          <div class="bg-dusk-surface rounded-2xl p-8 border border-dusk-accentSuccess/20 hover:border-dusk-accentSuccess/40 transition-all duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center mb-6">
+              <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-dusk-accentSuccess/30">
+                <img 
+                  src="img/team/member6.jpg" 
+                  alt="DevOps Engineer"
+                  class="w-full h-full object-cover"
+                  onerror="this.src='img/icons/logo3.png'"
+                />
+              </div>
+              <h3 class="text-2xl font-bold text-dusk-accentSuccess mb-2">Laura Fernández</h3>
+              <p class="text-dusk-accentPrimary font-semibold mb-3">DevOps Engineer</p>
+            </div>
+            <div class="text-center">
+              <p class="text-dusk-textSecondary mb-4">
+                Ingeniera DevOps especializada en automatización, CI/CD y infraestructura cloud. 
+                Asegura la escalabilidad y confiabilidad de nuestros sistemas.
+              </p>
+              <div class="flex justify-center space-x-4">
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors">
+                  <i class="fab fa-twitter text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-16 bg-dusk-surface/50 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl font-bold font-poppins mb-6">
+            <span class="gradient-text-dusk">Nuestros</span>
+            <span class="text-dusk-accentSuccess"> Valores</span>
+          </h2>
+          <p class="text-xl text-dusk-textSecondary max-w-3xl mx-auto">
+            Los principios que guían nuestro trabajo y definen nuestra cultura
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="w-16 h-16 mx-auto mb-4 bg-dusk-accentSuccess/20 rounded-full flex items-center justify-center">
+              <i class="fas fa-lightbulb text-2xl text-dusk-accentSuccess"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dusk-accentSuccess mb-3">Innovación</h3>
+            <p class="text-dusk-textSecondary">
+              Siempre exploramos nuevas tecnologías y metodologías para ofrecer soluciones de vanguardia.
+            </p>
+          </div>
+
+          <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-16 h-16 mx-auto mb-4 bg-dusk-accentSuccess/20 rounded-full flex items-center justify-center">
+              <i class="fas fa-users text-2xl text-dusk-accentSuccess"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dusk-accentSuccess mb-3">Colaboración</h3>
+            <p class="text-dusk-textSecondary">
+              Trabajamos en equipo, compartiendo conocimientos y apoyándonos mutuamente para lograr la excelencia.
+            </p>
+          </div>
+
+          <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+            <div class="w-16 h-16 mx-auto mb-4 bg-dusk-accentSuccess/20 rounded-full flex items-center justify-center">
+              <i class="fas fa-star text-2xl text-dusk-accentSuccess"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dusk-accentSuccess mb-3">Calidad</h3>
+            <p class="text-dusk-textSecondary">
+              Nos comprometemos a entregar productos de la más alta calidad, superando las expectativas de nuestros clientes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="bg-dusk-surface rounded-2xl p-8 border border-dusk-accentSuccess/20" data-aos="fade-up">
+          <h2 class="text-3xl font-bold font-poppins mb-6">
+            <span class="gradient-text-dusk">¿Te gustaría</span>
+            <span class="text-dusk-accentSuccess"> unirte a nuestro equipo?</span>
+          </h2>
+          <p class="text-xl text-dusk-textSecondary mb-8 max-w-2xl mx-auto">
+            Siempre estamos buscando talento apasionado por la tecnología. Si te gusta innovar y crear soluciones impactantes, ¡queremos conocerte!
+          </p>
+          <a
+            href="index.html#contact"
+            class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-dusk-accentSuccess to-dusk-accentPrimary text-black font-bold rounded-full hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-dusk-accentSuccess/25"
+          >
+            <i class="fas fa-paper-plane mr-2"></i>
+            Contáctanos
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true
+      });
+
+      // Navbar scroll effect
+      window.addEventListener('scroll', function() {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("navbar-scrolled");
+        } else {
+          navbar.classList.remove("navbar-scrolled");
+        }
+      });
+
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenu.classList.toggle("hidden");
+      }
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

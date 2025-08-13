@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Noticias sobre desarrollo web, videojuegos y tecnología - Klanstart"
+    />
+    <meta
+      name="keywords"
+      content="noticias desarrollo web, videojuegos, tecnología, klanstart"
+    />
+    <title>Noticias - KLANSTART</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS - Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/custom-styles.css?v=1.1" />
+    
+    <!-- Estilos críticos como respaldo -->
+    <style>
+      /* Estilos críticos para evitar problemas de cache */
+      .text-gamer-teal { color: #00ffff !important; }
+      .text-gamer-green { color: #00ff7f !important; }
+      .text-gamer-pink { color: #ff1493 !important; }
+      .text-gamer-magenta { color: #ff00ff !important; }
+      .text-gamer-cyan { color: #00ffff !important; }
+      .text-gray-300 { color: #d1d5db !important; }
+      .text-dusk-textPrimary { color: #ffffff !important; }
+      .text-dusk-textSecondary { color: #e5e7eb !important; }
+      .text-dusk-accentSuccess { color: #18f2b2 !important; }
+      .text-dusk-accentPrimary { color: #4b5cc4 !important; }
+      .text-black { color: #000000 !important; }
+      
+      .bg-dusk-surface { background: linear-gradient(135deg, #1a1b22 0%, #2c2d36 100%) !important; }
+      .bg-dusk-bg { background: #0e0e11 !important; }
+      
+      .bg-gamer-magenta { background-color: #ff00ff !important; }
+      .bg-gamer-cyan { background-color: #00ffff !important; }
+      .bg-gamer-green { background-color: #00ff7f !important; }
+      .bg-gamer-teal { background-color: #00ffff !important; }
+      .bg-gamer-pink { background-color: #ff1493 !important; }
+      
+      .border-gamer-magenta { border-color: #ff00ff !important; }
+      .border-gamer-cyan { border-color: #00ffff !important; }
+      .border-gamer-green { border-color: #00ff7f !important; }
+      .border-gamer-pink { border-color: #ff1493 !important; }
+      .border-gamer-teal { border-color: #00ffff !important; }
+      
+      .bg-gray-700 { background-color: #374151 !important; }
+      .bg-gray-800\/50 { background-color: rgba(31, 41, 55, 0.5) !important; }
+      
+      .placeholder-gray-400::placeholder { color: #9ca3af !important; }
+      
+      .backdrop-blur-lg { backdrop-filter: blur(16px) !important; }
+      .backdrop-blur-md { backdrop-filter: blur(12px) !important; }
+      
+      /* Estilos mejorados para elementos parallax */
+      .parallax-element { opacity: 0.8 !important; }
+      .parallax-icon { 
+        opacity: 0.6 !important; 
+        filter: drop-shadow(0 0 15px rgba(24, 242, 178, 0.4)) drop-shadow(0 0 25px rgba(24, 242, 178, 0.2)) !important;
+      }
+      .gaming-particle { 
+        background: rgba(24, 242, 178, 0.15) !important;
+        border: 1px solid rgba(24, 242, 178, 0.4) !important;
+        box-shadow: 0 0 15px rgba(24, 242, 178, 0.3), 0 0 30px rgba(24, 242, 178, 0.1) !important;
+      }
+      .gaming-hexagon { 
+        background: rgba(75, 92, 196, 0.15) !important;
+        border: 1px solid rgba(75, 92, 196, 0.4) !important;
+        box-shadow: 0 0 15px rgba(75, 92, 196, 0.3), 0 0 30px rgba(75, 92, 196, 0.1) !important;
+      }
+      .gaming-circuit { 
+        border: 1px solid rgba(255, 0, 255, 0.4) !important;
+        box-shadow: 0 0 15px rgba(255, 0, 255, 0.3), 0 0 30px rgba(255, 0, 255, 0.1) !important;
+      }
+      .gaming-gear { 
+        border: 3px solid rgba(0, 255, 255, 0.4) !important;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.3), 0 0 30px rgba(0, 255, 255, 0.1) !important;
+      }
+      
+      /* Fondo mejorado para sección VISION */
+      .gradient-gamer {
+        background: linear-gradient(135deg, #1a1b22 0%, #2c2d36 20%, rgba(255, 0, 255, 0.4) 40%, rgba(0, 255, 255, 0.4) 50%, rgba(0, 255, 127, 0.4) 60%, #2c2d36 80%, #1a1b22 100%) !important;
+        position: relative !important;
+      }
+    </style>
+  </head>
+
+  <body class="bg-dusk-bg text-dusk-textPrimary">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full backdrop-blur-lg z-50 navbar-modern transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center">
+            <a href="index.html">
+              <img
+                src="img/icons/lugo.png"
+                alt="Klanstart"
+                class="h-10 w-auto glow-animation icon-glow"
+              />
+              <span
+                class="ml-3 text-2xl font-bold font-poppins gradient-text-dusk neon-text"
+                >KLANSTART</span
+              >
+            </a>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="index.html"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Home</a
+            >
+            <a
+              href="index.html#service"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Servicios</a
+            >
+            <a
+              href="index.html#vision"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Vision</a
+            >
+            <a
+              href="index.html#about"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Acerca de nosotros</a
+            >
+            <a
+              href="equipo.html"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Equipo</a
+            >
+            <a
+              href="noticias.html"
+              class="nav-link text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Noticias</a
+            >
+            <a
+              href="index.html#pricing"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Precios</a
+            >
+            <a
+              href="index.html#contact"
+              class="nav-link text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors duration-300 font-medium"
+              >Contacto</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button class="text-dusk-textPrimary" onclick="toggleMobileMenu()">
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-dusk-surface/95 border-t border-dusk-accentSuccess"
+      >
+        <div class="px-4 py-2 space-y-1">
+          <a
+            href="index.html"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Home</a
+          >
+          <a
+            href="index.html#service"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Servicios</a
+          >
+          <a
+            href="index.html#vision"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Vision</a
+          >
+          <a
+            href="index.html#about"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Acerca de nosotros</a
+          >
+          <a
+            href="equipo.html"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Equipo</a
+          >
+          <a
+            href="noticias.html"
+            class="block px-3 py-2 text-dusk-accentSuccess transition-colors"
+            >Noticias</a
+          >
+          <a
+            href="index.html#pricing"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Precios</a
+          >
+          <a
+            href="index.html#contact"
+            class="block px-3 py-2 text-dusk-textPrimary hover:text-dusk-accentSuccess transition-colors"
+            >Contacto</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 relative overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="gaming-particle absolute top-20 left-10 w-4 h-4 rounded-full animate-pulse"></div>
+        <div class="gaming-hexagon absolute top-40 right-20 w-6 h-6 transform rotate-45 animate-pulse"></div>
+        <div class="gaming-circuit absolute bottom-20 left-1/4 w-8 h-8 border-2 rounded-full animate-spin"></div>
+        <div class="gaming-gear absolute bottom-40 right-1/3 w-5 h-5 rounded-full animate-pulse"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center" data-aos="fade-up">
+          <h1 class="text-5xl md:text-7xl font-bold font-poppins mb-6">
+            <span class="gradient-text-dusk">Últimas</span>
+            <span class="text-dusk-accentSuccess"> Noticias</span>
+          </h1>
+          <p class="text-xl text-dusk-textSecondary max-w-3xl mx-auto mb-8">
+            Mantente actualizado con las últimas novedades en desarrollo web, videojuegos y tecnología
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured News Section -->
+    <section class="py-16 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl font-bold font-poppins mb-6">
+            <span class="gradient-text-dusk">Noticia</span>
+            <span class="text-dusk-accentSuccess"> Destacada</span>
+          </h2>
+        </div>
+
+        <!-- Featured Article -->
+        <div class="bg-dusk-surface rounded-2xl overflow-hidden border border-dusk-accentSuccess/20 mb-16" data-aos="fade-up">
+          <div class="grid grid-cols-1 lg:grid-cols-2">
+            <div class="relative h-64 lg:h-full">
+              <img 
+                src="img/news/featured-news.jpg" 
+                alt="Klanstart lanza nueva plataforma"
+                class="w-full h-full object-cover"
+                onerror="this.src='img/icons/logo3.png'"
+              />
+              <div class="absolute top-4 left-4">
+                <span class="bg-dusk-accentSuccess text-black px-3 py-1 rounded-full text-sm font-bold">
+                  Destacada
+                </span>
+              </div>
+            </div>
+            <div class="p-8 flex flex-col justify-center">
+              <div class="flex items-center mb-4">
+                <span class="text-dusk-accentSuccess text-sm font-semibold">Klanstart</span>
+                <span class="text-dusk-textSecondary mx-2">•</span>
+                <span class="text-dusk-textSecondary text-sm">15 de Diciembre, 2024</span>
+              </div>
+              <h3 class="text-2xl font-bold text-dusk-accentSuccess mb-4">
+                Klanstart lanza nueva plataforma de desarrollo colaborativo
+              </h3>
+              <p class="text-dusk-textSecondary mb-6">
+                Estamos emocionados de anunciar el lanzamiento de nuestra nueva plataforma que revoluciona 
+                la forma en que los equipos desarrollan software. Esta herramienta integra las mejores 
+                prácticas de desarrollo ágil con tecnologías de vanguardia.
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="flex space-x-2">
+                  <span class="bg-dusk-accentPrimary/20 text-dusk-accentPrimary px-3 py-1 rounded-full text-sm">
+                    Desarrollo Web
+                  </span>
+                  <span class="bg-dusk-accentSuccess/20 text-dusk-accentSuccess px-3 py-1 rounded-full text-sm">
+                    Innovación
+                  </span>
+                </div>
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors font-semibold">
+                  Leer más <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Categories -->
+    <section class="py-16 bg-dusk-surface/50 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl font-bold font-poppins mb-6">
+            <span class="gradient-text-dusk">Categorías</span>
+            <span class="text-dusk-accentSuccess"> de Noticias</span>
+          </h2>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
+          <button class="category-filter active bg-dusk-accentSuccess text-black px-6 py-3 rounded-full font-semibold transition-all duration-300" data-category="all">
+            Todas
+          </button>
+          <button class="category-filter bg-dusk-surface text-dusk-textPrimary hover:bg-dusk-accentSuccess hover:text-black px-6 py-3 rounded-full font-semibold transition-all duration-300" data-category="web">
+            Desarrollo Web
+          </button>
+          <button class="category-filter bg-dusk-surface text-dusk-textPrimary hover:bg-dusk-accentSuccess hover:text-black px-6 py-3 rounded-full font-semibold transition-all duration-300" data-category="games">
+            Videojuegos
+          </button>
+          <button class="category-filter bg-dusk-surface text-dusk-textPrimary hover:bg-dusk-accentSuccess hover:text-black px-6 py-3 rounded-full font-semibold transition-all duration-300" data-category="klanstart">
+            Klanstart
+          </button>
+          <button class="category-filter bg-dusk-surface text-dusk-textPrimary hover:bg-dusk-accentSuccess hover:text-black px-6 py-3 rounded-full font-semibold transition-all duration-300" data-category="tech">
+            Tecnología
+          </button>
+        </div>
+
+        <!-- News Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="news-grid">
+          
+          <!-- News Article 1 -->
+          <article class="news-item bg-dusk-surface rounded-2xl overflow-hidden border border-dusk-accentSuccess/20 hover:border-dusk-accentSuccess/40 transition-all duration-300 transform hover:scale-105" data-category="web" data-aos="fade-up" data-aos-delay="100">
+            <div class="relative h-48">
+              <img 
+                src="img/news/news1.jpg" 
+                alt="React 19"
+                class="w-full h-full object-cover"
+                onerror="this.src='img/icons/logo3.png'"
+              />
+              <div class="absolute top-4 left-4">
+                <span class="bg-dusk-accentPrimary text-white px-3 py-1 rounded-full text-sm font-bold">
+                  Web Dev
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="text-dusk-textSecondary text-sm">10 de Diciembre, 2024</span>
+              </div>
+              <h3 class="text-xl font-bold text-dusk-accentSuccess mb-3">
+                React 19: Las nuevas características que cambiarán el desarrollo web
+              </h3>
+              <p class="text-dusk-textSecondary mb-4">
+                Meta anuncia las nuevas características de React 19, incluyendo mejoras en el rendimiento 
+                y nuevas APIs para el desarrollo de aplicaciones web modernas.
+              </p>
+              <div class="flex items-center justify-between">
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors font-semibold">
+                  Leer más <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- News Article 2 -->
+          <article class="news-item bg-dusk-surface rounded-2xl overflow-hidden border border-dusk-accentSuccess/20 hover:border-dusk-accentSuccess/40 transition-all duration-300 transform hover:scale-105" data-category="games" data-aos="fade-up" data-aos-delay="200">
+            <div class="relative h-48">
+              <img 
+                src="img/news/news2.jpg" 
+                alt="Unity Gaming"
+                class="w-full h-full object-cover"
+                onerror="this.src='img/icons/logo3.png'"
+              />
+              <div class="absolute top-4 left-4">
+                <span class="bg-gamer-pink text-white px-3 py-1 rounded-full text-sm font-bold">
+                  Gaming
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="text-dusk-textSecondary text-sm">8 de Diciembre, 2024</span>
+              </div>
+              <h3 class="text-xl font-bold text-dusk-accentSuccess mb-3">
+                Unity presenta nuevas herramientas para desarrollo de juegos móviles
+              </h3>
+              <p class="text-dusk-textSecondary mb-4">
+                Unity Technologies lanza un conjunto de herramientas revolucionarias que simplifican 
+                el desarrollo de juegos móviles y mejoran el rendimiento en dispositivos móviles.
+              </p>
+              <div class="flex items-center justify-between">
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors font-semibold">
+                  Leer más <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- News Article 3 -->
+          <article class="news-item bg-dusk-surface rounded-2xl overflow-hidden border border-dusk-accentSuccess/20 hover:border-dusk-accentSuccess/40 transition-all duration-300 transform hover:scale-105" data-category="klanstart" data-aos="fade-up" data-aos-delay="300">
+            <div class="relative h-48">
+              <img 
+                src="img/news/news3.jpg" 
+                alt="Klanstart Team"
+                class="w-full h-full object-cover"
+                onerror="this.src='img/icons/logo3.png'"
+              />
+              <div class="absolute top-4 left-4">
+                <span class="bg-dusk-accentSuccess text-black px-3 py-1 rounded-full text-sm font-bold">
+                  Klanstart
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="text-dusk-textSecondary text-sm">5 de Diciembre, 2024</span>
+              </div>
+              <h3 class="text-xl font-bold text-dusk-accentSuccess mb-3">
+                Klanstart celebra su primer año con resultados excepcionales
+              </h3>
+              <p class="text-dusk-textSecondary mb-4">
+                En nuestro primer año, hemos completado más de 50 proyectos exitosos, 
+                ayudando a startups y empresas a digitalizar sus operaciones.
+              </p>
+              <div class="flex items-center justify-between">
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors font-semibold">
+                  Leer más <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- News Article 4 -->
+          <article class="news-item bg-dusk-surface rounded-2xl overflow-hidden border border-dusk-accentSuccess/20 hover:border-dusk-accentSuccess/40 transition-all duration-300 transform hover:scale-105" data-category="tech" data-aos="fade-up" data-aos-delay="400">
+            <div class="relative h-48">
+              <img 
+                src="img/news/news4.jpg" 
+                alt="AI Development"
+                class="w-full h-full object-cover"
+                onerror="this.src='img/icons/logo3.png'"
+              />
+              <div class="absolute top-4 left-4">
+                <span class="bg-gamer-cyan text-black px-3 py-1 rounded-full text-sm font-bold">
+                  Tech
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="text-dusk-textSecondary text-sm">3 de Diciembre, 2024</span>
+              </div>
+              <h3 class="text-xl font-bold text-dusk-accentSuccess mb-3">
+                La IA revoluciona el desarrollo de software en 2024
+              </h3>
+              <p class="text-dusk-textSecondary mb-4">
+                Las herramientas de inteligencia artificial están transformando la forma en que 
+                los desarrolladores escriben código, desde autocompletado hasta debugging automático.
+              </p>
+              <div class="flex items-center justify-between">
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors font-semibold">
+                  Leer más <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- News Article 5 -->
+          <article class="news-item bg-dusk-surface rounded-2xl overflow-hidden border border-dusk-accentSuccess/20 hover:border-dusk-accentSuccess/40 transition-all duration-300 transform hover:scale-105" data-category="web" data-aos="fade-up" data-aos-delay="500">
+            <div class="relative h-48">
+              <img 
+                src="img/news/news5.jpg" 
+                alt="Web Performance"
+                class="w-full h-full object-cover"
+                onerror="this.src='img/icons/logo3.png'"
+              />
+              <div class="absolute top-4 left-4">
+                <span class="bg-dusk-accentPrimary text-white px-3 py-1 rounded-full text-sm font-bold">
+                  Web Dev
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="text-dusk-textSecondary text-sm">1 de Diciembre, 2024</span>
+              </div>
+              <h3 class="text-xl font-bold text-dusk-accentSuccess mb-3">
+                Optimización de rendimiento web: Las mejores prácticas para 2025
+              </h3>
+              <p class="text-dusk-textSecondary mb-4">
+                Descubre las técnicas más efectivas para mejorar la velocidad de carga y 
+                la experiencia de usuario en sitios web modernos.
+              </p>
+              <div class="flex items-center justify-between">
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors font-semibold">
+                  Leer más <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- News Article 6 -->
+          <article class="news-item bg-dusk-surface rounded-2xl overflow-hidden border border-dusk-accentSuccess/20 hover:border-dusk-accentSuccess/40 transition-all duration-300 transform hover:scale-105" data-category="games" data-aos="fade-up" data-aos-delay="600">
+            <div class="relative h-48">
+              <img 
+                src="img/news/news6.jpg" 
+                alt="Game Development"
+                class="w-full h-full object-cover"
+                onerror="this.src='img/icons/logo3.png'"
+              />
+              <div class="absolute top-4 left-4">
+                <span class="bg-gamer-pink text-white px-3 py-1 rounded-full text-sm font-bold">
+                  Gaming
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span class="text-dusk-textSecondary text-sm">28 de Noviembre, 2024</span>
+              </div>
+              <h3 class="text-xl font-bold text-dusk-accentSuccess mb-3">
+                El futuro del desarrollo de videojuegos independientes
+              </h3>
+              <p class="text-dusk-textSecondary mb-4">
+                Analizamos las tendencias emergentes y las oportunidades para desarrolladores 
+                independientes en la industria de los videojuegos.
+              </p>
+              <div class="flex items-center justify-between">
+                <a href="#" class="text-dusk-accentSuccess hover:text-dusk-accentPrimary transition-colors font-semibold">
+                  Leer más <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Load More Button -->
+        <div class="text-center mt-12" data-aos="fade-up">
+          <button class="bg-dusk-accentSuccess text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-dusk-accentSuccess/25">
+            <i class="fas fa-plus mr-2"></i>
+            Cargar más noticias
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-dusk-surface rounded-2xl p-8 border border-dusk-accentSuccess/20" data-aos="fade-up">
+          <div class="text-center">
+            <h2 class="text-3xl font-bold font-poppins mb-6">
+              <span class="gradient-text-dusk">Suscríbete a</span>
+              <span class="text-dusk-accentSuccess"> nuestro newsletter</span>
+            </h2>
+            <p class="text-xl text-dusk-textSecondary mb-8 max-w-2xl mx-auto">
+              Recibe las últimas noticias sobre desarrollo web, videojuegos y tecnología directamente en tu correo
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input 
+                type="email" 
+                placeholder="Tu correo electrónico"
+                class="flex-1 px-4 py-3 bg-dusk-bg border border-dusk-accentSuccess/30 rounded-full text-dusk-textPrimary placeholder-gray-400 focus:outline-none focus:border-dusk-accentSuccess"
+              />
+              <button class="bg-dusk-accentSuccess text-black px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300">
+                Suscribirse
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true
+      });
+
+      // Navbar scroll effect
+      window.addEventListener('scroll', function() {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("navbar-scrolled");
+        } else {
+          navbar.classList.remove("navbar-scrolled");
+        }
+      });
+
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenu.classList.toggle("hidden");
+      }
+
+      // Category filter functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const categoryFilters = document.querySelectorAll('.category-filter');
+        const newsItems = document.querySelectorAll('.news-item');
+
+        categoryFilters.forEach(filter => {
+          filter.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            
+            // Update active filter
+            categoryFilters.forEach(f => f.classList.remove('active', 'bg-dusk-accentSuccess', 'text-black'));
+            categoryFilters.forEach(f => f.classList.add('bg-dusk-surface', 'text-dusk-textPrimary'));
+            this.classList.add('active', 'bg-dusk-accentSuccess', 'text-black');
+            this.classList.remove('bg-dusk-surface', 'text-dusk-textPrimary');
+
+            // Filter news items
+            newsItems.forEach(item => {
+              if (category === 'all' || item.getAttribute('data-category') === category) {
+                item.style.display = 'block';
+                item.style.animation = 'fadeIn 0.5s ease-in-out';
+              } else {
+                item.style.display = 'none';
+              }
+            });
+          });
+        });
+      });
+
+      // Add fadeIn animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>

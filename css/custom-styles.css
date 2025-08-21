@@ -549,3 +549,50 @@ body {
   33% { transform: translateY(-20px) rotate(5deg); }
   66% { transform: translateY(10px) rotate(-3deg); }
 } 
+
+/* Clases personalizadas para controlar el tamaño de imágenes de noticias */
+.news-image-small {
+  width: 100%;
+  height: 200px !important; /* 200px de altura */
+  object-fit: cover;
+}
+
+.news-image-medium {
+  width: 100%;
+  height: 300px !important; /* 300px de altura */
+  object-fit: cover;
+}
+
+.news-image-large {
+  width: 100%;
+  height: 400px !important; /* 400px de altura */
+  object-fit: cover;
+}
+
+.news-image-custom {
+  width: 100%;
+  max-width: 500px !important; /* Ancho máximo de 500px */
+  height: auto !important; /* Altura automática para mantener proporción */
+  object-fit: cover;
+}
+
+/* Para el artículo destacado específicamente */
+.featured-news-image {
+  width: 100%;
+  height: 250px !important; /* Altura personalizable */
+  object-fit: cover;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .news-image-small,
+  .news-image-medium,
+  .news-image-large,
+  .featured-news-image {
+    height: 180px !important;
+  }
+  
+  .news-image-custom {
+    max-width: 100% !important;
+  }
+} 
